@@ -38,13 +38,11 @@ const MilNode = {
     Vue.use(RouterCore, options)
 
     // MilNode
+    // options.application
+    // options.layout
+
     // options.noBack
     // options.noAuth
-    // options.applicationName
-    // options.navigationDrawerItems
-    // options.toolbarAccountItems
-    // options.toolbarApplicationItems
-    // options.toolbarLanguagesItems
     // options.components
     // options.services.baseUrl
     // options.services.mgrSettings
