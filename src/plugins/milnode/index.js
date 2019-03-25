@@ -9,13 +9,15 @@ const MilNodeCore = {
     if (this.installed) return
     this.installed = true
 
+    // options.application
+    let applicationSettings = options.application || {}
+    Vue.prototype.$applicationName = applicationSettings.name || 'APP_NAME'
+    Vue.prototype.$applicationContact = applicationSettings.contact || 'CONTACT_NAME'
+
     // options.noBack, options.noAuth
     Vue.prototype.$noBack = options.noBack
     Vue.prototype.$noAuth = options.noAuth
     Vue.prototype.$enableTheme = options.enableTheme // FF - TODO: remove when stable
-
-    // options.applicationName
-    Vue.prototype.$applicationName = options.applicationName || 'APP_NAME'
 
     // options.navigationDrawerItems
     Vue.prototype.$navigationDrawerItems = [...(options.navigationDrawerItems || []), ...navigationDrawerItems]

@@ -105,7 +105,7 @@ export default {
       about: {
         about: 'About',
         applicationInformation: 'Application information',
-        developedBy: 'Developed by {name}',
+        developedBy: 'Developed by {contact}',
         releaseInformation: 'Release information'
       },
       feedback: {
@@ -142,7 +142,7 @@ export default {
         header24: 'Recipient of the data',
         text24: 'No personal data is transmitted to nor used by any third party. Each registered user (having a personal user account) can also access his own information. An anonymous user can\'t access any information from other users.',
         header25: 'Supervision of the data handling',
-        text25: 'Your personal data is handled by {name} under the supervision of Antoine MILOCHAU. Storage and transfer of your personal data is done under the supervision of the site providing the server on which {name} is installed and the transfer medium.',
+        text25: 'Your personal data is handled by {name} under the supervision of {contact}. Storage and transfer of your personal data is done under the supervision of the site providing the server on which {name} is installed and the transfer medium.',
         header26: 'Retention period',
         text26: 'Your personal data are kept as long as your {name} user account exists. Your personal data are erased when your user account is suppressed, or when {name} is uninstalled from the server. Some personal data can be removed manually by user action.',
         header27: 'Access to the data',
