@@ -35,9 +35,13 @@ const RouterCore = {
       }
     }
 
+    // options.services.disabled
+    let servicesSettings = options.services || {}
+    let noBack = servicesSettings.disabled || false
+
     // options.router.routes
     const routes = [...options.router.routes, ...Routes]
-      .filter(r => !options.noBack || !(r.options && r.options.backRequired))
+      .filter(r => !noBack || !(r.options && r.options.backRequired))
       .filter(r => !options.noAuth || !(r.options && r.options.authRequired))
       .map(r => route(
         r.path,
