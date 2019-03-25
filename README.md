@@ -1,4 +1,5 @@
 [![Build Status](https://amilochau.visualstudio.com/GitHub/_apis/build/status/amilochau.MilNode?branchName=master)](https://amilochau.visualstudio.com/GitHub/_build/latest?definitionId=16&branchName=master)
+![Release Status](https://amilochau.vsrm.visualstudio.com/_apis/public/Release/badge/71e8ac76-9bb0-4248-a628-de3b3dcdecfa/1/1)
 
 # MilNode package project
 
