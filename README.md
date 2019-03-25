@@ -41,35 +41,43 @@ To ensure minimal quality, branch policies have been set up for pull requests to
 
 # Installation and Usage
 
-1. Just use `npm install milnode`
-2. Now you can use MilNode library by using following snippet:
+1. Import MilNode with `npm install milnode`
+2. Use MilNode library by using following snippet into your `main.js`:
 ```
 import MilNode from 'milnode'
+Vue.use(MilNode)
+```
+3. Import MilNode styles (provided as `.stylus` file) into your `main.js` file:
+```
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import 'milnode/src/stylus/app.styl'
+```
+Or, from your main `.stylus` project file:
+```
+@import '~roboto-fontface/css/roboto/roboto-fontface.css'
+@import '~material-design-icons-iconfont/dist/material-design-icons.css'
+@import '~milnode/src/stylus/app.styl'
+```
+4. Add proper compilation settings into your `vue.config.js` file:
+```
+const webpack = require('webpack')
 
-Vue.use(MilNode, {
-  noBack: false,
-  noAuth: false,
-  applicationName: 'YOUR_APP_NAME',
-  navigationDrawerItems,
-  toolbarAccountItems,
-  toolbarApplicationItems,
-  toolbarLanguagesItems,
-  messages,
-  router: {
-    mode: 'hash' // 'history' by default
-    routes,
-    rootComponent: () => import('@/pages/Root.vue'),
-    homeComponent: () => import('@/pages/home/Home.vue')
+module.exports = {
+  transpileDependencies: [
+    'milnode',
+    'vuex-persist'
+  ],
+  productionSourceMap: false,
+  configureWebpack: {
+    plugins: [
+      new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en|fr/)
+    ]
   },
-  store: {
-    modules
-  },
-  services: {
-    baseUrl: 'YOUR_BACK_URL/api',
-    mgrSettings
-  },
-  enableTheme: true
-})
+  chainWebpack: config => {
+    config.plugins.delete('prefetch')
+  }
+}
 ```
 
 # Documentation
@@ -79,11 +87,213 @@ Vue.use(MilNode, {
 The simplest way to install MilNode is by using int with the following snippet:
 ```
 import MilNode from 'milnode'
-
 Vue.use(MilNode)
 ```
 
-You can provide more information to MilNode, to adapt the default template to your needs.
+You can provide more information to MilNode, to adapt the default template to your needs:
+```
+import MilNode from 'milnode'
+Vue.use(MilNode, {
+  // Your settings here
+})
+```
+
+The following settings are available:
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Default value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+      `application`
+      </td>
+      <td>
+      ```
+      {
+        name: 'APP_NAME',
+        contact: 'CONTACT_NAME'
+      }
+      ```
+      </td>
+      <td>
+      Main application information:
+      <ul>
+        <li>`name`: application name displayed on top toolbar and in Privacy page</li>
+        <li>`contact`: contact name used on Contact and Privacy pages</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      `layout`
+      </td>
+      <td>
+      ```
+      {
+        navigationDrawerItems: [],
+        accountItems: [],
+        applicationItems: [],
+        languagesItems: [],
+        enabledTheme: false
+      }
+      ```
+      </td>
+      <td>
+      Layout information:
+      <ul>
+        <li>`navigationDrawerItems`: items to add in navigation drawer; these will be added before template items (Help, Your feedback, Privacy, About)</li>
+        <li>`accountItems`: items to add in account toolbar; these will be added before template items (Logout)</li>
+        <li>`applicationItems`: items to add in applications toolbar; let this array empty or undefined to disable the applications toolbar</li>
+        <li>`languagesItems`: languages to propose on settings toolbar</li>
+        <li>`enabledTheme`: enabled dark theme support on settings toolbar</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      `services`
+      </td>
+      <td>
+      ```
+      {
+        disabled: false,
+        baseUrl: 'http://mysite.com/api'
+      }
+      ```
+      </td>
+      <td>
+      Services (API) information:
+      <ul>
+        <li>`disabled`: disable services support, and disabled Help, Feedback and About pages</li>
+        <li>`baseUrl`: base URL for your API</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      `router`
+      </td>
+      <td>
+      ```
+      {
+        mode: 'history',
+        routes: [],
+        rootComponent: () => import('@/pages/Root.vue'),
+        homeComponent: () => import('@/pages/home/Home.vue')
+      }
+      ```
+      </td>
+      <td>
+      Router information:
+      <ul>
+        <li>`mode`: vue-router mode: default is `history`, a common setting is to set up router mode to `hash`</li>
+        <li>`routes`: routes to add; these will be added to template routes</li>
+        <li>`rootComponent`: address to import your custom Root page as a vue.js component</li>
+        <li>`homeComponent`: address to import your custom home page as a vue.js component</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      `store`
+      </td>
+      <td>
+      ```
+      {
+        modules: []
+      }
+      ```
+      </td>
+      <td>
+      Store information:
+      <ul>
+        <li>`modules`: vuex modules to add; these will be added to template modules</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      `i18n`
+      </td>
+      <td>
+      ```
+      {
+        messages: {}
+      }
+      ```
+      </td>
+      <td>
+      Internationalization information:
+      <ul>
+        <li>`messages`: vue-i18n messages to add; these will be added to template messages</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      `authentication`
+      </td>
+      <td>
+      ```
+      {
+        disabled: false,
+        userManagerSettings: {}
+      }
+      ```
+      </td>
+      <td>
+      Users authentication information:
+      <ul>
+        <li>`disabled`: disable user authentication</li>
+        <li>`userManagerSettings`: oidc-client user manager settings</li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+With all the settings defined, here is a complete example:
+```
+import MilNode from 'milnode'
+Vue.use(MilNode, {
+  application: {
+    name: 'APP_NAME',
+    contact: 'CONTACT_NAME'
+  },
+  layout: {
+    navigationDrawerItems: [],
+    accountItems: [],
+    applicationItems: [],
+    languagesItems: [],
+    enabledTheme: false
+  },
+  services: {
+    disabled: false,
+    baseUrl: 'http://mysite.com/api'
+  },
+  router: {
+    mode: 'history',
+    routes: [],
+    rootComponent: () => import('@/pages/Root.vue'),
+    homeComponent: () => import('@/pages/home/Home.vue')
+  },
+  store: {
+    modules: []
+  },
+  i18n: {
+    messages: {}
+  },
+  authentication: {
+    disabled: false,
+    userManagerSettings: {}
+  }
+})
+```
 
 ## Features
 

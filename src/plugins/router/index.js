@@ -42,10 +42,14 @@ const RouterCore = {
     // options.router
     let routerSettings = options.router || {}
 
+    // options.authentication
+    let authenticationSettings = options.authentication || {}
+    let noAuth = authenticationSettings.disabled || false
+
     // options.router.routes
     const routes = [...routerSettings.routes || [], ...Routes]
       .filter(r => !noBack || !(r.options && r.options.backRequired))
-      .filter(r => !options.noAuth || !(r.options && r.options.authRequired))
+      .filter(r => !noAuth || !(r.options && r.options.authRequired))
       .map(r => route(
         r.path,
         r.name,
