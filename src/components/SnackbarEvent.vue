@@ -70,6 +70,7 @@ export default {
         this.message = errorMessages.message
       } else {
         this.message = errorMessages
+        // eslint-disable-next-line
         if (process.env.NODE_ENV !== 'production') { console.log(`Message must be set with the dedicated structure for snackbar: { message: XXX, details: XXX } (${errorMessages})`) }
       }
       this.details = errorMessages.details
