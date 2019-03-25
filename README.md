@@ -100,6 +100,7 @@ Vue.use(MilNode, {
 ```
 
 The following settings are available.
+
 | Key | Default value | Description |
 | --- | --- | --- |
 | **`application`** | `{}` | **Main application information** |
