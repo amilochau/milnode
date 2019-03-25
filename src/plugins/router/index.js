@@ -35,12 +35,15 @@ const RouterCore = {
       }
     }
 
-    // options.services.disabled
+    // options.services
     let servicesSettings = options.services || {}
     let noBack = servicesSettings.disabled || false
 
+    // options.router
+    let routerSettings = options.router || {}
+
     // options.router.routes
-    const routes = [...options.router.routes, ...Routes]
+    const routes = [...routerSettings.routes || [], ...Routes]
       .filter(r => !noBack || !(r.options && r.options.backRequired))
       .filter(r => !options.noAuth || !(r.options && r.options.authRequired))
       .map(r => route(
@@ -56,18 +59,18 @@ const RouterCore = {
     routes.unshift({
       path: '/',
       name: 'home/Home',
-      component: options.router.homeComponent
+      component: routerSettings.homeComponent
     })
 
     // options.router.rootComponent
     // options.router.mode
     router = new Router({
-      mode: options.router.mode || 'history',
+      mode: routerSettings.mode || 'history',
       scrollBehavior,
       routes: [
         {
           path: '/:lang([a-z]{2})',
-          component: options.router.rootComponent,
+          component: routerSettings.rootComponent,
           props: route => ({ lang: route.params.lang }),
           children: routes
         },
