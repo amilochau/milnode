@@ -1,0 +1,46 @@
+<template>
+  <v-expansion-panel inset>
+    <v-expansion-panel-content
+      v-for="(user, i) in users"
+      :key="i">
+      <div slot="header">
+        {{ user.firstName }} {{ user.lastName }}
+      </div>
+      <v-card>
+        <v-list>
+          <v-list-tile
+            :href="'mailto:' + user.email"
+            ripple>
+            <v-list-tile-action>
+              <v-icon>email</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ user.email }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile
+            v-if="user.siteName"
+            ripple>
+            <v-list-tile-action>
+              <v-icon>domain</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ user.siteName }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-card>
+    </v-expansion-panel-content>
+  </v-expansion-panel>
+</template>
+
+<script>
+export default {
+  props: {
+    users: {
+      type: Array,
+      required: true
+    }
+  }
+}
+</script>
