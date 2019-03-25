@@ -23,12 +23,14 @@ steps:
   inputs:
     command: custom
     verbose: false
-    customCommand: 'run prod'
+    customCommand: 'run build-bundle'
 
 - task: CopyFiles@2
   displayName: 'Copy Files'
   inputs:
-    SourceFolder: dist
+    Contents: |
+     **
+     !node_modules/**
     TargetFolder: '$(build.artifactstagingdirectory)'
 
 - task: PublishBuildArtifacts@1
