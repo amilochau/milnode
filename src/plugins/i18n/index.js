@@ -15,11 +15,13 @@ const I18nCore = {
     moment.locale('en')
     numeral.locale('en')
 
-    // options.messages
+    // options.i18n
+    let i18nSettings = options.i18n || {}
+
     i18n = new VueI18n({
       locale: 'en',
       fallbackLocale: 'en',
-      messages: mixin({ en, fr }, options.messages)
+      messages: mixin({ en, fr }, i18nSettings.messages || {})
     })
   }
 }

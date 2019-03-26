@@ -21,33 +21,15 @@ const MilNode = {
     Vue.use(VuetifyCore, options)
 
     // I18n
-    // options.messages
     Vue.use(I18nCore, options)
 
     // Vuex
-    // options.store.modules
     Vue.use(VuexCore, options)
 
     // Router
-    // options.noBack
-    // options.noAuth
-    // options.router.routes
-    // options.router.mode
-    // options.router.homeComponent
-    // options.router.rootComponent
     Vue.use(RouterCore, options)
 
     // MilNode
-    // options.noBack
-    // options.noAuth
-    // options.applicationName
-    // options.navigationDrawerItems
-    // options.toolbarAccountItems
-    // options.toolbarApplicationItems
-    // options.toolbarLanguagesItems
-    // options.components
-    // options.services.baseUrl
-    // options.services.mgrSettings
     Vue.use(MilNodeCore, { components, ...options })
   }
 }

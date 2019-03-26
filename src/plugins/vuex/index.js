@@ -12,18 +12,22 @@ const VuexCore = {
   install (Vue, options = {}) {
     Vue.use(Vuex)
 
+    // options.store
+    let storeSettings = options.store || {}
+
+    // Store user-defined state into localStorage
     const vuexLocal = new VuexPersistence({
       storage: window.localStorage,
-      modules: [ 'theme', ...Object.getOwnPropertyNames(options.store.modules) ] // Only store user-defined state into localStorage
+      modules: [ 'theme', ...Object.getOwnPropertyNames(storeSettings.modules || []) ]
     })
 
-    // options.storeModules
+    // Register vuex modules
     store = new Vuex.Store({
       modules: mixin({
         app,
         load,
         theme
-      }, options.store.modules),
+      }, storeSettings.modules || []),
       plugins: [vuexLocal.plugin]
     })
   }

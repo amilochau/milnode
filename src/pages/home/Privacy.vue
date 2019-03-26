@@ -25,7 +25,7 @@
               <milnode-section-header>{{ $t('pages.home.privacy.header24') }}</milnode-section-header>
               <milnode-section-text>{{ $t('pages.home.privacy.text24') }}</milnode-section-text>
               <milnode-section-header>{{ $t('pages.home.privacy.header25') }}</milnode-section-header>
-              <milnode-section-text>{{ $t('pages.home.privacy.text25', { name: $applicationName }) }}</milnode-section-text>
+              <milnode-section-text>{{ $t('pages.home.privacy.text25', { name: $applicationName, contact: $applicationContact }) }}</milnode-section-text>
               <milnode-section-header>{{ $t('pages.home.privacy.header26') }}</milnode-section-header>
               <milnode-section-text>{{ $t('pages.home.privacy.text26', { name: $applicationName }) }}</milnode-section-text>
               <milnode-section-header>{{ $t('pages.home.privacy.header27') }}</milnode-section-header>

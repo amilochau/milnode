@@ -28,7 +28,7 @@
                 <v-icon>person_pin</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>{{ $t('pages.home.about.developedBy', { name: 'Antoine Milochau' }) }}</v-list-tile-title>
+                <v-list-tile-title>{{ $t('pages.home.about.developedBy', { contact: $applicationContact }) }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider/>

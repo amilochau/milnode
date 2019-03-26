@@ -1,11 +1,14 @@
 {
   "name": "milnode",
-  "version": "0.5.0",
+  "version": "0.6.0-0",
   "description": "Vue.js Component Framework, build on top of vuetify",
   "author": {
     "name": "Antoine Milochau",
     "email": "amilochau@outlook.com"
   },
+  "homepage": "https://github.com/amilochau/MilNode#readme",
+  "bugs": "https://github.com/amilochau/MilNode/issues",
+  "repository": "github:amilochau/MilNode",
   "keywords": [
     "vue",
     "vuejs",
@@ -25,8 +28,7 @@
     "src/*",
     "public/*",
     "*.json",
-    "*.js",
-    "*.css"
+    "*.js"
   ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.1",

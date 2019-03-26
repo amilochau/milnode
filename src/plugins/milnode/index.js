@@ -9,27 +9,30 @@ const MilNodeCore = {
     if (this.installed) return
     this.installed = true
 
-    // options.noBack, options.noAuth
-    Vue.prototype.$noBack = options.noBack
-    Vue.prototype.$noAuth = options.noAuth
-    Vue.prototype.$enableTheme = options.enableTheme // FF - TODO: remove when stable
+    // options.application
+    let applicationSettings = options.application || {}
+    Vue.prototype.$applicationName = applicationSettings.name || 'APP_NAME'
+    Vue.prototype.$applicationContact = applicationSettings.contact || 'CONTACT_NAME'
 
-    // options.applicationName
-    Vue.prototype.$applicationName = options.applicationName || 'APP_NAME'
+    // options.services
+    let servicesSettings = options.services || {}
+    Vue.prototype.$noBack = servicesSettings.disabled || false
+    Vue.prototype.$baseUrl = servicesSettings.baseUrl || 'http://mysite.com/api'
 
-    // options.navigationDrawerItems
-    Vue.prototype.$navigationDrawerItems = [...(options.navigationDrawerItems || []), ...navigationDrawerItems]
-      .filter(r => !options.noBack || !(r.options && r.options.backRequired))
-      .filter(r => !options.noAuth || !(r.options && r.options.authRequired))
+    // options.authentication
+    let authenticationSettings = options.authentication || {}
+    Vue.prototype.$noAuth = authenticationSettings.disabled || false
+    Vue.prototype.$mgrSettings = authenticationSettings.userManagerSettings || {}
 
-    // options.toolbarAccountItems
-    Vue.prototype.$toolbarAccountItems = [...(options.toolbarAccountItems || []), ...toolbarAccountItems]
-
-    // options.toolbarApplicationItems
-    Vue.prototype.$toolbarApplicationItems = options.toolbarApplicationItems || []
-
-    // options.toolbarLanguagesItems
-    Vue.prototype.$toolbarLanguagesItems = [...(options.toolbarLanguagesItems || []), ...toolbarLanguagesItems]
+    // options.layout
+    let layoutSettings = options.layout || {}
+    Vue.prototype.$navigationDrawerItems = [...(layoutSettings.navigationDrawerItems || []), ...navigationDrawerItems]
+      .filter(r => !Vue.prototype.$noBack || !(r.options && r.options.backRequired))
+      .filter(r => !Vue.prototype.$noAuth || !(r.options && r.options.authRequired))
+    Vue.prototype.$toolbarAccountItems = [...(layoutSettings.accountItems || []), ...toolbarAccountItems]
+    Vue.prototype.$toolbarApplicationItems = layoutSettings.applicationItems || []
+    Vue.prototype.$toolbarLanguagesItems = [...(layoutSettings.languagesItems || []), ...toolbarLanguagesItems]
+    Vue.prototype.$enableTheme = layoutSettings.enableTheme
 
     function registerComponents (components) {
       if (components) {
@@ -45,14 +48,13 @@ const MilNodeCore = {
     }
 
     // options.components
-    registerComponents(options.components)
+    registerComponents(options.components || [])
 
-    // options.services.baseUrl
-    // options.services.mgrSettings
+    // MilNode options
     mnOptions = {
       services: {
-        baseUrl: options.services.baseUrl,
-        mgrSettings: options.services.mgrSettings
+        baseUrl: Vue.prototype.$baseUrl,
+        mgrSettings: Vue.prototype.$mgrSettings
       }
     }
   }
