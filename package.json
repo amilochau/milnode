@@ -6,6 +6,9 @@
     "name": "Antoine Milochau",
     "email": "amilochau@outlook.com"
   },
+  "homepage": "https://github.com/amilochau/MilNode#readme",
+  "bugs": "https://github.com/amilochau/MilNode/issues",
+  "repository": "github:amilochau/MilNode",
   "keywords": [
     "vue",
     "vuejs",
@@ -25,8 +28,7 @@
     "src/*",
     "public/*",
     "*.json",
-    "*.js",
-    "*.css"
+    "*.js"
   ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.1",
