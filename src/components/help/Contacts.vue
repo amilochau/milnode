@@ -9,6 +9,7 @@
       <v-card>
         <v-list>
           <v-list-tile
+            v-if="user.email"
             :href="'mailto:' + user.email"
             ripple>
             <v-list-tile-action>
