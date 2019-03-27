@@ -7,7 +7,7 @@
         xs12
         lg8>
         <v-card
-          class="grey lighten-4 elevation-12">
+          class="elevation-12">
           <v-toolbar
             dark
             color="primary">
