@@ -4,7 +4,8 @@
       <v-flex
         xs12
         md6
-        order-md1>
+        order-md
+        class="pa-2">
         <milnode-help-contacts-description
           :title="$t('pages.home.help.business.title')"
           :description="$t('pages.home.help.business.description')"/>
@@ -20,13 +21,15 @@
       <v-flex
         xs12
         md6
-        order-md5>
+        order-md5
+        class="pa-2">
         <milnode-help-contacts :users="contacts.business.users"/>
       </v-flex>
       <v-flex
         xs12
         md6
-        order-md2>
+        order-md2
+        class="pa-2">
         <milnode-help-contacts-description
           :title="$t('pages.home.help.technical.title')"
           :description="$t('pages.home.help.technical.description')"/>
@@ -42,7 +45,8 @@
       <v-flex
         xs12
         md6
-        order-md6>
+        order-md6
+        class="pa-2">
         <milnode-help-contacts :users="contacts.technical.users"/>
       </v-flex>
     </v-layout>
