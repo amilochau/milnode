@@ -103,7 +103,7 @@ export default {
     },
     home: {
       about: {
-        about: 'About',
+        title: 'About',
         applicationInformation: 'Application information',
         developedBy: 'Developed by {contact}',
         releaseInformation: 'Release information'
@@ -118,19 +118,20 @@ export default {
         success: 'Thanks for your feedback!'
       },
       help: {
-        title: 'Contacts',
+        title: 'Help',
         business: {
           title: 'Business support',
           description: 'If you need help to use this application, please contact our team.',
-          linkText: 'Help community'
+          linkText: 'Help page'
         },
         technical: {
           title: 'Technical support',
-          description: 'If you detect a bug or need a new feature, don\'t hesitate to contact us.'
+          description: 'If you detect a bug or need a new feature, don\'t hesitate to contact us.',
+          linkText: 'Help page'
         }
       },
       privacy: {
-        h1: 'Privacy',
+        title: 'Privacy',
         header11: 'Storage and removal',
         text11: 'Personal data are stored in the database, on the server where {name} has been installed. The physical localization of the server determines the legal framework applicable to your personal data. The information stored in the database is mapped to unique identifiers: modification of that information, including your account name, does not compromise the data integrity nor its confidentiality.',
         header21: 'Law # 78-17 from January 6th, 1978 on computerized treatments, files and freedom',

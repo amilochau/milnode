@@ -1,22 +1,16 @@
 <template>
-  <v-container fluid>
-    <v-layout
-      align-center
-      justify-center>
+  <milnode-page :title="$t('pages.home.feedback.title')">
+    <v-layout wrap>
+      <v-flex xs12>
+        <milnode-help-contacts-description
+          :title="$t('pages.home.feedback.catch')"
+          :description="$t('pages.home.feedback.explain')"/>
+      </v-flex>
       <v-flex
-        xs12
-        sm8
-        md6>
-        <v-card class="elevation-12">
-          <v-toolbar
-            dark
-            color="primary">
-            <v-toolbar-title>{{ $t('pages.home.feedback.title') }}</v-toolbar-title>
-          </v-toolbar>
-          <v-card-text>
-            <strong>{{ $t('pages.home.feedback.catch') }}</strong>
-            {{ $t('pages.home.feedback.explain') }}
-          </v-card-text>
+        xs12 
+        sm8 offset-sm2 
+        md6 offset-md3>
+        <v-card>
           <v-form @submit.prevent="sendFeedback">
             <v-card-text>
               <v-rating
@@ -36,14 +30,18 @@
                 {{ $t("pages.home.feedback.send") }}
               </v-btn>
             </v-card-actions>
-            <v-card-text>
-              <em>{{ $t('pages.home.feedback.privacy') }}</em>
-            </v-card-text>
           </v-form>
         </v-card>
       </v-flex>
+      <v-flex 
+        xs12 
+        sm8 offset-sm2 
+        md6 offset-md3
+        class="text-xs-center">
+        <em>{{ $t('pages.home.feedback.privacy') }}</em>
+      </v-flex>
     </v-layout>
-  </v-container>
+  </milnode-page>
 </template>
 
 <script>
