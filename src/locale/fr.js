@@ -118,7 +118,7 @@ export default {
         success: 'Merci de nous avoir partagé votre avis !'
       },
       help: {
-        title: 'Contacts',
+        title: 'Aide',
         business: {
           title: 'Support métier',
           description: 'Si vous avez besoin d\'aide pour utiliser l\'application, n\'hésitez pas à contacter notre équipe.',

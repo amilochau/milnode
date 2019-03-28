@@ -118,7 +118,7 @@ export default {
         success: 'Thanks for your feedback!'
       },
       help: {
-        title: 'Contacts',
+        title: 'Help',
         business: {
           title: 'Business support',
           description: 'If you need help to use this application, please contact our team.',
