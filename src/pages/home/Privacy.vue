@@ -1,5 +1,5 @@
 <template>
-  <milnode-page :title="$t('pages.home.privacy.h1')">
+  <milnode-page :title="$t('pages.home.privacy.title')">
     <section>
       <milnode-section-header>{{ $t('pages.home.privacy.header11') }}</milnode-section-header>
       <milnode-section-text>{{ $t('pages.home.privacy.text11', { name: $applicationName }) }}</milnode-section-text>
