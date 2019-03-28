@@ -1,0 +1,38 @@
+// Condensed styles
+.table-condensed
+  table
+    thead
+      tr
+        height: 40px
+    tbody
+      tr
+        td, th
+          height: 36px
+    tfoot
+      tr
+        height: 36px
+    thead, tbody, tfoot
+      tr
+        td, th
+          &:first-child
+            padding: 0 16px
+            @media screen and (max-width: 959px)
+              padding: 0 8px 0 16px
+          &:not(:nth-child(1))
+            padding: 0 16px
+            @media screen and (max-width: 959px)
+              padding: 0 8px
+.container.container-condensed
+  padding: 12px
+  @media screen and (max-width: 599px)
+    padding: 8px 0 0
+.container-thin
+  padding: 0
+.container.grid-list-sm.container-thin, .container.grid-list-md.container-thin
+  .layout
+    .flex
+      padding-top: 0
+      padding-bottom: 0
+.card-title-condensed
+  padding: 0 16px
+  min-height: 48px
