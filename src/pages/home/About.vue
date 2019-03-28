@@ -4,15 +4,13 @@
       <v-flex
         xs12
         md6
-        order-md
-        class="pa-2">
+        order-md>
         <milnode-help-contacts-description :title="$t('pages.home.about.applicationInformation')"/>
       </v-flex>
       <v-flex
         xs12
         md6
-        order-md3
-        class="pa-2">
+        order-md3>
         <v-list>
           <v-list-tile>
             <v-list-tile-action>
@@ -35,15 +33,13 @@
       <v-flex
         xs12
         md6
-        order-md2
-        class="pa-2">
+        order-md2>
         <milnode-help-contacts-description :title="$t('pages.home.about.releaseInformation')"/>
       </v-flex>
       <v-flex
         xs12
         md6
-        order-md4
-        class="pa-2">
+        order-md4>
         <v-list>
           <v-list-tile>
             <v-list-tile-action>

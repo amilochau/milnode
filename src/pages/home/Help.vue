@@ -4,8 +4,7 @@
       <v-flex
         xs12
         md6
-        order-md
-        class="pa-2">
+        order-md>
         <milnode-help-contacts-description
           :title="$t('pages.home.help.business.title')"
           :description="$t('pages.home.help.business.description')"/>
@@ -13,8 +12,7 @@
       <v-flex
         xs12
         md6
-        order-md3
-        class="pa-2">
+        order-md3>
         <milnode-help-contacts-category
           :contact-category="contacts.business"
           :link-text="$t('pages.home.help.business.linkText')"/>
@@ -22,15 +20,13 @@
       <v-flex
         xs12
         md6
-        order-md5
-        class="pa-2">
+        order-md5>
         <milnode-help-contacts :users="contacts.business.users"/>
       </v-flex>
       <v-flex
         xs12
         md6
-        order-md2
-        class="pa-2">
+        order-md2>
         <milnode-help-contacts-description
           :title="$t('pages.home.help.technical.title')"
           :description="$t('pages.home.help.technical.description')"/>
@@ -38,8 +34,7 @@
       <v-flex
         xs12
         md6
-        order-md4
-        class="pa-2">
+        order-md4>
         <milnode-help-contacts-category
           :contact-category="contacts.technical"
           :link-text="$t('pages.home.help.technical.linkText')"/>
@@ -47,8 +42,7 @@
       <v-flex
         xs12
         md6
-        order-md6
-        class="pa-2">
+        order-md6>
         <milnode-help-contacts :users="contacts.technical.users"/>
       </v-flex>
     </v-layout>

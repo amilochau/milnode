@@ -1,6 +1,6 @@
 <template>
-  <v-container class="container-condensed pa-2">
-    <milnode-page-header class="heading mb-4">{{ title }}</milnode-page-header>
+  <v-container grid-list-lg>
+    <milnode-page-header>{{ title }}</milnode-page-header>
     <slot/>
   </v-container>
 </template>
