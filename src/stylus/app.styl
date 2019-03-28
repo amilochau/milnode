@@ -2,52 +2,11 @@
 $color-pack = false
 @import '~vuetify/src/stylus/main'
 
+@require './_colors'
+@require './_condensed'
+@require '/_layout'
+
 // Custom milnode theme
-.cookies-menu
-  position: absolute !important;
-  z-index: 2
-
-.progress-bar
-  position: absolute !important
-
-.table-condensed
-  table
-    thead
-      tr
-        height: 40px
-    tbody
-      tr
-        td, th
-          height: 36px
-    tfoot
-      tr
-        height: 36px
-    thead, tbody, tfoot
-      tr
-        td, th
-          &:first-child
-            padding: 0 16px
-            @media screen and (max-width: 959px)
-              padding: 0 8px 0 16px
-          &:not(:nth-child(1))
-            padding: 0 16px
-            @media screen and (max-width: 959px)
-              padding: 0 8px
-.container.container-condensed
-  padding: 12px
-  @media screen and (max-width: 599px)
-    padding: 8px 0 0
-.container-thin
-  padding: 0
-.container.grid-list-sm.container-thin, .container.grid-list-md.container-thin
-  .layout
-    .flex
-      padding-top: 0
-      padding-bottom: 0
-.card-title-condensed
-  padding: 0 16px
-  min-height: 48px
-
 .strongify
   font-weight: 900 !important
 .lightify
@@ -70,42 +29,6 @@ table
   .v-chip__content
     line-height: 1
     padding: 8px
-
-// Color pack
-global-color-accent-with-theme($color_name, $color_value_light, $color_value_dark, $color_type)
-  .theme--light
-    .{$color_name}
-      &.{$color_type}
-        background-color $color_value_light !important
-        border-color: $color_value_light !important
-
-    .{$color_name}--text
-      &.text--{$color_type}
-        color: $color_value_light !important
-        caret-color: $color_value_light !important
-  .theme--dark
-    .{$color_name}
-      &.{$color_type}
-        background-color $color_value_dark !important
-        border-color: $color_value_dark !important
-
-    .{$color_name}--text
-      &.text--{$color_type}
-        color: $color_value_dark !important
-        caret-color: $color_value_dark !important
-
-for $color_name, $color_color in $colors
-  if $color_color != 'shades'
-    global-color($color_name, $color_color.base)
-    global-color-accent-with-theme($color_name, $color_color.lighten-5, $color_color.darken-4, 'lighten-5')
-    global-color-accent-with-theme($color_name, $color_color.lighten-4, $color_color.darken-4, 'lighten-4')
-    global-color-accent-with-theme($color_name, $color_color.lighten-3, $color_color.darken-3, 'lighten-3')
-    global-color-accent-with-theme($color_name, $color_color.lighten-2, $color_color.darken-2, 'lighten-2')
-    global-color-accent-with-theme($color_name, $color_color.lighten-1, $color_color.darken-1, 'lighten-1')
-    global-color-accent-with-theme($color_name, $color_color.darken-1, $color_color.lighten-2, 'darken-1')
-    global-color-accent-with-theme($color_name, $color_color.darken-2, $color_color.lighten-3, 'darken-2')
-    global-color-accent-with-theme($color_name, $color_color.darken-3, $color_color.lighten-4, 'darken-3')
-    global-color-accent-with-theme($color_name, $color_color.darken-4, $color_color.lighten-5, 'darken-4')
 
 // Light / Dark themes
 .theme--light
