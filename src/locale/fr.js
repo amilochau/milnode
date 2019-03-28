@@ -103,7 +103,7 @@ export default {
     },
     home: {
       about: {
-        about: 'A propos',
+        title: 'A propos',
         applicationInformation: 'Informations sur l\'application',
         developedBy: 'Développé par {contact}',
         releaseInformation: 'Informations sur la version'

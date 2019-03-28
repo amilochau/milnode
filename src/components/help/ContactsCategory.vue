@@ -1,5 +1,5 @@
 <template>
-  <v-list class="transparent">
+  <v-list>
     <v-list-tile v-if="contactCategory.place">
       <v-list-tile-action>
         <v-icon class="blue--text text--lighten-2">place</v-icon>
