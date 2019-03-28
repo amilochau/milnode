@@ -4,7 +4,7 @@
       slot="activator"
       :aria-label="$t('buttons.refresh')"
       :disabled="loading"
-      class="milnode-btn-refresh"
+      class="grey lighten-2"
       icon
       @click="$emit('click')">
       <v-icon>refresh</v-icon>

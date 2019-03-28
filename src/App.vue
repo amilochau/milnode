@@ -1,8 +1,6 @@
 <template>
-  <v-app
-    class="milnode-app"
-    :dark="darkTheme">
-    <router-view/>
+  <v-app :dark="darkTheme">
+    <router-view class="grey lighten-2"/>
   </v-app>
 </template>
 

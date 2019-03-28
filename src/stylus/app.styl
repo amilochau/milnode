@@ -4,64 +4,6 @@ $color-pack = false
 
 @require './_colors'
 @require './_condensed'
-@require '/_layout'
-
-// Custom milnode theme
-.strongify
-  font-weight: 900 !important
-.lightify
-  color: #BBB
-
-table
-  tr.table-info-footer
-    font-size: 12px
-    font-weight: 500
-    color: rgba(0,0,0,.54)
-    &:first-of-type
-      border-top: 1px solid rgba(0,0,0,.20)
-
-.v-select__selections
-  white-space: nowrap
-  
-.v-chip--x-small
-  font-size: 12px
-  height: 18px
-  .v-chip__content
-    line-height: 1
-    padding: 8px
-
-// Light / Dark themes
-.theme--light
-  &.milnode-app
-    background-color: $grey.lighten-2 !important 
-  .table-toolbar
-    background-color: $shades.white !important
-  .milnode-toolbar
-    background-color: $grey.lighten-5 !important
-  .milnode-drawer-close
-    color: $grey.darken-1 !important
-  .milnode-section-header
-    color: $blue.darken-2 !important
-  .milnode-toolbar-account
-    .title-face
-      background-color: $grey.lighten-1 !important
-      color: $shades.white !important
-  .milnode-dialog-primary
-    color: $blue.darken-1 !important
-  .milnode-btn-refresh
-    background-color: $grey.lighten-2
-
-.theme--dark
-  &.milnode-app
-    background-color: $grey.darken-2 !important
-  .table-toolbar
-    background-color: $grey.darken-4 !important
-  .milnode-section-header
-    color: $blue.lighten-2 !important
-  .milnode-toolbar-account
-    .title-face
-      background-color: $grey.darken-1 !important
-  .milnode-dialog-primary
-    color: $blue.lighten-1 !important
-  .milnode-btn-refresh
-    background-color: $grey.darken-2
+@require './_layout'
+@require './_mode'
+@require './_theme'

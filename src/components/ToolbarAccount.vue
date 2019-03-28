@@ -17,7 +17,7 @@
       <v-list dense>
         <v-list-tile avatar>
           <v-list-tile-avatar>
-            <v-icon class="title-face">face</v-icon>
+            <v-icon class="grey lighten-1 white--text">face</v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{ profile.given_name }} {{ profile.family_name }}</v-list-tile-title>
