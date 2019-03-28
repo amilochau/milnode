@@ -1,6 +1,5 @@
 <template>
-  <v-container class="container-condensed pa-2">
-    <milnode-page-header class="heading mb-4">{{ $t('pages.home.privacy.h1') }}</milnode-page-header>
+  <milnode-page :title="$t('pages.home.privacy.h1')">
     <section>
       <milnode-section-header>{{ $t('pages.home.privacy.header11') }}</milnode-section-header>
       <milnode-section-text>{{ $t('pages.home.privacy.text11', { name: $applicationName }) }}</milnode-section-text>
@@ -23,5 +22,5 @@
       <milnode-section-header>{{ $t('pages.home.privacy.header28') }}</milnode-section-header>
       <milnode-section-text>{{ $t('pages.home.privacy.text28', { name: $applicationName }) }}</milnode-section-text>
     </section>
-  </v-container>
+  </milnode-page>
 </template>
