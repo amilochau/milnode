@@ -29,7 +29,7 @@
         <v-icon class="blue--text text--lighten-2">link</v-icon>
       </v-list-tile-action>
       <v-list-tile-content>
-        <v-list-tile-title>{{ linkText }}</v-list-tile-title>
+        <v-list-tile-title>{{ $t('pages.home.help.linkText') }}</v-list-tile-title>
       </v-list-tile-content>
     </v-list-tile>
   </v-list>
@@ -41,11 +41,6 @@ export default {
     contactCategory: {
       type: Object,
       required: true
-    },
-    linkText: {
-      // eslint-disable-next-line
-      type: String | undefined,
-      default: undefined
     }
   }
 }

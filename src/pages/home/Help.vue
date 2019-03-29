@@ -13,9 +13,7 @@
         xs12
         md6
         order-md3>
-        <milnode-help-contacts-category
-          :contact-category="contacts.business"
-          :link-text="$t('pages.home.help.business.linkText')"/>
+        <milnode-help-contacts-category :contact-category="contacts.business"/>
       </v-flex>
       <v-flex
         xs12
@@ -35,9 +33,7 @@
         xs12
         md6
         order-md4>
-        <milnode-help-contacts-category
-          :contact-category="contacts.technical"
-          :link-text="$t('pages.home.help.technical.linkText')"/>
+        <milnode-help-contacts-category :contact-category="contacts.technical"/>
       </v-flex>
       <v-flex
         xs12

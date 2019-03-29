@@ -119,15 +119,14 @@ export default {
       },
       help: {
         title: 'Aide',
+        linkText: 'Page d\'aide',
         business: {
           title: 'Support métier',
-          description: 'Si vous avez besoin d\'aide pour utiliser l\'application, n\'hésitez pas à contacter notre équipe.',
-          linkText: 'Page d\'aide'
+          description: 'Si vous avez besoin d\'aide pour utiliser l\'application, n\'hésitez pas à contacter notre équipe.'
         },
         technical: {
           title: 'Support technique',
-          description: 'Si vous remarquez un bug ou souhaitez une nouvelle fonctionnalité, vous pouvez nous contacter.',
-          linkText: 'Page d\'aide'
+          description: 'Si vous remarquez un bug ou souhaitez une nouvelle fonctionnalité, vous pouvez nous contacter.'
         }
       },
       privacy: {
