@@ -1,5 +1,5 @@
 <template>
-  <section class="text-xs-center pa-2">
+  <section>
     <milnode-section-header>{{ title }}</milnode-section-header>
     <milnode-section-text v-if="description">{{ description }}</milnode-section-text>
   </section>

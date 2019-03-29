@@ -10,7 +10,8 @@
       <v-flex
         xs12
         md6
-        order-md3>
+        order-md3
+        class="mb-3">
         <v-list>
           <v-list-tile>
             <v-list-tile-action>
@@ -39,7 +40,8 @@
       <v-flex
         xs12
         md6
-        order-md4>
+        order-md4
+        class="mb-3">
         <v-list>
           <v-list-tile>
             <v-list-tile-action>

@@ -18,7 +18,8 @@
       <v-flex
         xs12
         md6
-        order-md5>
+        order-md5
+        class="mb-3">
         <milnode-help-contacts :users="contacts.business.users"/>
       </v-flex>
       <v-flex
@@ -38,7 +39,8 @@
       <v-flex
         xs12
         md6
-        order-md6>
+        order-md6
+        class="mb-3">
         <milnode-help-contacts :users="contacts.technical.users"/>
       </v-flex>
     </v-layout>
