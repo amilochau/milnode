@@ -1,7 +1,7 @@
 <template>
   <section class="text-xs-center pa-2">
     <milnode-section-header>{{ title }}</milnode-section-header>
-    <milnode-section-text>{{ description }}</milnode-section-text>
+    <milnode-section-text v-if="description">{{ description }}</milnode-section-text>
   </section>
 </template>
 
@@ -13,8 +13,9 @@ export default {
       required: true
     },
     description: {
-      type: String,
-      required: true
+      // eslint-disable-next-line
+      type: String | undefined,
+      default: undefined
     }
   }
 }

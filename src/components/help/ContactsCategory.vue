@@ -20,7 +20,7 @@
       </v-list-tile-content>
     </v-list-tile>
     <v-list-tile
-      v-if="contactCategory.url"
+      v-if="contactCategory.url && linkText"
       :href="contactCategory.url"
       target="_blank"
       rel="noopener"
