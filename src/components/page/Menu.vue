@@ -13,7 +13,7 @@
           :to="backAction.to"
           exact
           icon>
-          <v-icon>{{ backAction.icon || 'arrow_back' }}</v-icon>
+          <v-icon>{{ backAction.icon || 'home' }}</v-icon>
         </v-btn>
       </template>
       <span>{{ $t(backAction.title) || $t('pages.menu.backToHomePage')}}</span>
