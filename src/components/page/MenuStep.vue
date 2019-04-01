@@ -2,7 +2,7 @@
   <v-tooltip right>
     <v-btn
       slot="activator"
-      :aria-label="page.title"
+      :aria-label="$t(page.title)"
       :to="page.to"
       class="milnode-step-btn px-3"
       active-class="active"
@@ -20,10 +20,10 @@
         <v-icon>{{ page.icon }}</v-icon>
       </v-avatar>
       <span class="hidden-xs-only ml-2 step-title">
-      {{ page.title }}
+      {{ $t(page.title) }}
       </span>
     </v-btn>
-    <span>{{ page.title }}</span>
+    <span>{{ $t(page.title) }}</span>
   </v-tooltip>
 </template>
 

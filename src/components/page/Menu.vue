@@ -7,13 +7,13 @@
       right>
       <v-btn
         slot="activator"
-        :aria-label="backAction.title || $t('pages.menu.backToHomePage')"
+        :aria-label="$t(backAction.title) || $t('pages.menu.backToHomePage')"
         :to="backAction.to"
         exact
         icon>
         <v-icon>{{ backAction.icon || 'arrow_back' }}</v-icon>
       </v-btn>
-      <span>{{ backAction.title || $t('pages.menu.backToHomePage')}}</span>
+      <span>{{ $t(backAction.title) || $t('pages.menu.backToHomePage')}}</span>
     </v-tooltip>
     <v-divider
       v-if="backAction.to"
@@ -36,7 +36,7 @@
       disabled>
       # {{ details.id }}
     </v-chip>
-    <v-toolbar-title v-if="details.title">{{ details.title }}</v-toolbar-title>
+    <v-toolbar-title v-if="details.title">{{ $t(details.title) }}</v-toolbar-title>
     <v-spacer/>
     <slot name="actions"/>
     <v-tooltip
@@ -44,12 +44,12 @@
       bottom>
       <v-btn
         slot="activator"
-        :aria-label="more.title || $t('pages.menu.more')"
+        :aria-label="$t(more.title) || $t('pages.menu.more')"
         icon
         @click="$emit('toggle')">
         <v-icon>{{ more.icon || 'more_vert' }}</v-icon>
       </v-btn>
-      <span>{{ more.title || $t('pages.menu.more') }}</span>
+      <span>{{ $t(more.title) || $t('pages.menu.more') }}</span>
     </v-tooltip>
   </v-toolbar>
 </template>
