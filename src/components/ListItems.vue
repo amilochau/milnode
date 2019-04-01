@@ -9,7 +9,7 @@
         :prepend-icon="item.icon"
         no-action>
         <v-list-tile
-          slot="activator"
+          v-slot:activator
           ripple>
           <v-list-tile-content>
             <v-list-tile-title>{{ $t(item.title) }}</v-list-tile-title>

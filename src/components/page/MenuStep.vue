@@ -1,7 +1,7 @@
 <template>
   <v-tooltip right>
     <v-btn
-      slot="activator"
+      v-slot:activator
       :aria-label="$t(page.title)"
       :to="page.to"
       class="milnode-step-btn px-3"

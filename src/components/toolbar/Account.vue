@@ -1,14 +1,14 @@
 <template>
   <v-menu
     v-if="logged"
-    slot="activator"
+    v-slot:activator
     class="milnode-toolbar-account"
     bottom
     offset-y
     left
     attach>
     <v-btn
-      slot="activator"
+      v-slot:activator
       :aria-label="$t('layout.account.title')"
       icon>
       <v-icon>account_circle</v-icon>
@@ -36,7 +36,7 @@
     v-else
     left>
     <v-btn
-      slot="activator"
+      v-slot:activator
       class="primary"
       icon
       @click="login">

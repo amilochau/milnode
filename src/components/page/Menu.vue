@@ -6,7 +6,7 @@
       v-if="backAction.to"
       right>
       <v-btn
-        slot="activator"
+        v-slot:activator
         :aria-label="$t(backAction.title) || $t('pages.menu.backToHomePage')"
         :to="backAction.to"
         exact
@@ -43,7 +43,7 @@
       v-if="more.enabled"
       bottom>
       <v-btn
-        slot="activator"
+        v-slot:activator
         :aria-label="$t(more.title) || $t('pages.menu.more')"
         icon
         @click="$emit('toggle')">

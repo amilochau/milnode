@@ -1,14 +1,14 @@
 <template>
   <v-tooltip left>
     <v-menu
-      slot="activator"
+      v-slot:activator
       :close-on-content-click="false"
       bottom
       offset-y
       left
       attach>
       <v-btn
-        slot="activator"
+        v-slot:activator
         :aria-label="$t('layout.settings.title')"
         icon>
         <v-icon>settings</v-icon>
