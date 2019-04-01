@@ -1,5 +1,7 @@
 <template>
-  <milnode-page :title="$t('pages.home.feedback.title')">
+  <milnode-page-container
+    :back-action="{ to: { name: 'home/Home' } }"
+    :pages="homePages">
     <v-layout wrap>
       <v-flex xs12>
         <milnode-help-contacts-description
@@ -41,13 +43,14 @@
         <em>{{ $t('pages.home.feedback.privacy') }}</em>
       </v-flex>
     </v-layout>
-  </milnode-page>
+  </milnode-page-container>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import { EventBus } from './../../event-bus'
 import applicationService from './../../services/application.service'
+import homePages from './../../data/pages/home'
 
 export default {
   data () {
@@ -59,7 +62,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('load', ['loading'])
+    ...mapGetters('load', ['loading']),
+    homePages () {
+      return homePages
+    }
   },
   methods: {
     async sendFeedback () {

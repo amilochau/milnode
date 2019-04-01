@@ -1,5 +1,7 @@
 <template>
-  <milnode-page :title="$t('pages.home.privacy.title')">
+  <milnode-page-container
+    :back-action="{ to: { name: 'home/Home' } }"
+    :pages="homePages">
     <v-layout wrap>
       <v-flex xs12>
         <section>
@@ -26,5 +28,17 @@
         </section>
       </v-flex>
     </v-layout>
-  </milnode-page>
+  </milnode-page-container>
 </template>
+
+<script>
+import homePages from './../../data/pages/home'
+
+export default {
+  computed: {
+    homePages () {
+      return homePages
+    }
+  }
+}
+</script>

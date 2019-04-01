@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// TODO v0.7: remove this component, use MilnodePageContainer instead
 export default {
   props: {
     title: {

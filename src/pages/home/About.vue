@@ -1,5 +1,7 @@
 <template>
-  <milnode-page :title="$t('pages.home.about.title')">
+  <milnode-page-container
+    :back-action="{ to: { name: 'home/Home' } }"
+    :pages="homePages">
     <v-layout wrap>
       <v-flex
         xs12
@@ -62,11 +64,12 @@
         </v-list>
       </v-flex>
     </v-layout>
-  </milnode-page>
+  </milnode-page-container>
 </template>
 
 <script>
 import applicationService from './../../services/application.service'
+import homePages from './../../data/pages/home'
 
 export default {
   data () {
@@ -75,6 +78,11 @@ export default {
         definitionName: null,
         releaseName: null
       }
+    }
+  },
+  computed: {
+    homePages () {
+      return homePages
     }
   },
   async beforeRouteEnter (to, from, next) {

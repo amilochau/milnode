@@ -2,6 +2,24 @@
 // See $colors from https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/stylus/settings/_colors.styl
 // See global-color() from https://github.com/vuetifyjs/vuetify/blob/master/packages/vuetify/src/stylus/generic/_colors.styl
 
+global-color-with-theme($color_name, $color_value_light, $color_value_dark)
+  .theme--light
+    .{$color_name}
+      background-color $color_value_light !important
+      border-color: $color_value_light !important
+
+    .{$color_name}--text
+      color $color_value_light !important
+      caret-color: $color_value_light !important
+  .theme--dark
+    .{$color_name}
+      background-color $color_value_dark !important
+      border-color: $color_value_dark !important
+
+    .{$color_name}--text
+      color $color_value_dark !important
+      caret-color: $color_value_dark !important
+
 global-color-accent-with-theme($color_name, $color_value_light, $color_value_dark, $color_type)
   .theme--light
     .{$color_name}
@@ -36,3 +54,6 @@ for $color_name, $color_color in $colors
     global-color-accent-with-theme($color_name, $color_color.darken-2, $color_color.lighten-3, 'darken-2')
     global-color-accent-with-theme($color_name, $color_color.darken-3, $color_color.lighten-4, 'darken-3')
     global-color-accent-with-theme($color_name, $color_color.darken-4, $color_color.lighten-5, 'darken-4')
+
+global-color-with-theme('black', #000000, #FFFFFF)
+global-color-with-theme('white', #FFFFFF, #000000)
