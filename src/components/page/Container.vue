@@ -1,6 +1,7 @@
 <template>
   <span>
     <milnode-page-menu
+      :absolute="fillHeight"
       :back-action="backAction"
       :pages="pages"
       :details="details"
@@ -12,7 +13,9 @@
     </milnode-page-menu>
     <v-container
       :fluid="fluid"
+      :fill-height="fillHeight"
       :class="containerClass"
+      :style="fillHeightStyle"
       grid-list-md>
       <slot/>
     </v-container>
@@ -45,6 +48,10 @@ export default {
     condensed: {
       type: Boolean,
       default: false
+    },
+    fillHeight: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -52,6 +59,9 @@ export default {
       return {
         'container-condensed': this.condensed
       }
+    },
+    fillHeightStyle () {
+      return this.fillHeight ? 'padding: 48px 0 0' : undefined
     }
   }
 }

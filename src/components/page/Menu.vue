@@ -1,6 +1,7 @@
 <template>
   <v-toolbar
     class="milnode-toolbar pr-2"
+    :absolute="absolute"
     dense>
     <v-tooltip
       v-if="backAction.to"
@@ -72,6 +73,10 @@ export default {
     more: {
       type: Object,
       default: () => ({})
+    },
+    absolute: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
