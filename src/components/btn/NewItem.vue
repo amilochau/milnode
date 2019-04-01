@@ -1,14 +1,16 @@
 <template>
   <v-tooltip bottom>
-    <v-btn
-      v-slot:activator
-      :aria-label="computedTitle"
-      :disabled="loading"
-      color="primary"
-      icon
-      @click="$emit('click')">
-      <v-icon>add</v-icon>
-    </v-btn>
+    <template #activator="tooltip">
+      <v-btn
+        v-on="tooltip.on"
+        :aria-label="computedTitle"
+        :disabled="loading"
+        color="primary"
+        icon
+        @click="$emit('click')">
+        <v-icon>add</v-icon>
+      </v-btn>
+    </template>
     <span>{{ computedTitle }}</span>
   </v-tooltip>
 </template>

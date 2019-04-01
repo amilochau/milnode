@@ -7,7 +7,7 @@
       :details="details"
       :more="more"
       @toggle="$emit('toggle')">
-      <template v-slot:actions>
+      <template #actions>
         <slot name="actions"/>
       </template>
     </milnode-page-menu>
