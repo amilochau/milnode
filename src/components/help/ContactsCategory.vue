@@ -1,5 +1,5 @@
 <template>
-  <v-list>
+  <v-list class="elevation-1">
     <v-list-tile v-if="contactCategory.place">
       <v-list-tile-action>
         <v-icon class="blue--text text--lighten-2">place</v-icon>
