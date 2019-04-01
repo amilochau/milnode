@@ -1,10 +1,13 @@
 // Initial state
 const state = {
-  appDrawer: null
+  appDrawer: null,
+  appTitle: null
 }
 
 // Getters
-const getters = { }
+const getters = {
+  title: (state) => state.appTitle
+}
 
 // Actions
 const actions = { }
@@ -16,6 +19,9 @@ const mutations = {
   },
   DRAWER_TOGGLE (state) {
     state.appDrawer = !state.appDrawer
+  },
+  TITLE (state, payload) {
+    state.appTitle = payload
   }
 }
 

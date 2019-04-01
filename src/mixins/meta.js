@@ -25,8 +25,10 @@ export default {
     meta () {
       if (this.title) {
         document.title = `${this.title} — ${this.$applicationName}`
+        this.$store.commit('app/TITLE', this.title)
       } else {
         document.title = this.$applicationName
+        this.$store.commit('app/TITLE', this.$applicationName)
       }
       if (this.description) {
         this._description.setAttribute('content', this.description)
