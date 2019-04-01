@@ -3,9 +3,9 @@
     <v-expansion-panel-content
       v-for="(user, i) in users"
       :key="i">
-      <div v-slot:header>
+      <template #header>
         {{ user.firstName }} {{ user.lastName }}
-      </div>
+      </template>
       <v-list>
         <v-list-tile
           v-if="user.email"

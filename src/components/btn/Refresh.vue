@@ -1,14 +1,16 @@
 <template>
   <v-tooltip bottom>
-    <v-btn
-      v-slot:activator
-      :aria-label="$t('buttons.refresh')"
-      :disabled="loading"
-      class="grey lighten-2"
-      icon
-      @click="$emit('click')">
-      <v-icon>refresh</v-icon>
-    </v-btn>
+    <template #activator="tooltip">
+      <v-btn
+        v-on="tooltip.on"
+        :aria-label="$t('buttons.refresh')"
+        :disabled="loading"
+        class="grey lighten-2"
+        icon
+        @click="$emit('click')">
+        <v-icon>refresh</v-icon>
+      </v-btn>
+    </template>
     <span>{{ $t('buttons.refresh') }}</span>
   </v-tooltip>
 </template>

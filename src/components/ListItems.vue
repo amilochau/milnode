@@ -8,13 +8,15 @@
         :key="i"
         :prepend-icon="item.icon"
         no-action>
-        <v-list-tile
-          v-slot:activator
-          ripple>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ $t(item.title) }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <template #activator="group">
+          <v-list-tile
+            v-on="group.on"
+            ripple>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ $t(item.title) }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
         <template v-for="(subItem, j) in item.items.filter(x => display(x))">
           <v-subheader
             v-if="subItem.header"

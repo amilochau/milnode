@@ -1,18 +1,19 @@
 <template>
   <v-menu
     v-if="logged"
-    v-slot:activator
     class="milnode-toolbar-account"
     bottom
     offset-y
     left
     attach>
-    <v-btn
-      v-slot:activator
-      :aria-label="$t('layout.account.title')"
-      icon>
-      <v-icon>account_circle</v-icon>
-    </v-btn>
+    <template #activator="menu">
+      <v-btn
+        v-on="menu.on"
+        :aria-label="$t('layout.account.title')"
+        icon>
+        <v-icon>account_circle</v-icon>
+      </v-btn>
+    </template>
     <v-card>
       <v-list dense>
         <v-list-tile avatar>
@@ -35,13 +36,15 @@
   <v-tooltip
     v-else
     left>
-    <v-btn
-      v-slot:activator
-      class="primary"
-      icon
-      @click="login">
-      <v-icon>power_settings_new</v-icon>
-    </v-btn>
+    <template #activator="tooltip">
+      <v-btn
+        v-on="tooltip.on"
+        class="primary"
+        icon
+        @click="login">
+        <v-icon>power_settings_new</v-icon>
+      </v-btn>
+    </template>
     <span>{{ $t('layout.account.login') }}</span>
   </v-tooltip>
 </template>
