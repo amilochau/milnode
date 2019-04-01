@@ -1,7 +1,7 @@
 <template>
   <v-tooltip bottom>
     <v-btn
-      slot="activator"
+      v-slot:activator
       :aria-label="$t('buttons.delete')"
       :disabled="disabled"
       class="ma-0 error--text"

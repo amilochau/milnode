@@ -3,13 +3,13 @@
     v-if="$toolbarApplicationItems && $toolbarApplicationItems.length"
     left>
     <v-menu
-      slot="activator"
+      v-slot:activator
       bottom
       offset-y
       left
       attach>
       <v-btn
-        slot="activator"
+        v-slot:activator
         :aria-label="$t('layout.applications.title')"
         icon>
         <v-icon>apps</v-icon>

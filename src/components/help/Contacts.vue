@@ -3,7 +3,7 @@
     <v-expansion-panel-content
       v-for="(user, i) in users"
       :key="i">
-      <div slot="header">
+      <div v-slot:header>
         {{ user.firstName }} {{ user.lastName }}
       </div>
       <v-list>
