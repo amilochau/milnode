@@ -48,7 +48,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import accountService from './../services/account.service'
+import accountService from './../../services/account.service'
 
 export default {
   computed: {
