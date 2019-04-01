@@ -1,5 +1,5 @@
 <template>
-  <milnode-page :title="$t('pages.home.about.title')">
+  <milnode-page-container :title="$t('pages.home.about.title')">
     <v-layout wrap>
       <v-flex
         xs12
@@ -62,7 +62,7 @@
         </v-list>
       </v-flex>
     </v-layout>
-  </milnode-page>
+  </milnode-page-container>
 </template>
 
 <script>

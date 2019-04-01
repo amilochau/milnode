@@ -1,5 +1,5 @@
 <template>
-  <milnode-page :title="$t('pages.home.privacy.title')">
+  <milnode-page-container :title="$t('pages.home.privacy.title')">
     <v-layout wrap>
       <v-flex xs12>
         <section>
@@ -26,5 +26,5 @@
         </section>
       </v-flex>
     </v-layout>
-  </milnode-page>
+  </milnode-page-container>
 </template>

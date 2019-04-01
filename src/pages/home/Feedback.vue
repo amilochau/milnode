@@ -1,5 +1,5 @@
 <template>
-  <milnode-page :title="$t('pages.home.feedback.title')">
+  <milnode-page-container :title="$t('pages.home.feedback.title')">
     <v-layout wrap>
       <v-flex xs12>
         <milnode-help-contacts-description
@@ -41,7 +41,7 @@
         <em>{{ $t('pages.home.feedback.privacy') }}</em>
       </v-flex>
     </v-layout>
-  </milnode-page>
+  </milnode-page-container>
 </template>
 
 <script>
