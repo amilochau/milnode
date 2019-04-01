@@ -6,7 +6,7 @@ const state = {
 
 // Getters
 const getters = {
-  title: (state) => state.appTitle,
+  title: (state) => state.appTitle
 }
 
 // Actions
