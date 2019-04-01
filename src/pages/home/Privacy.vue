@@ -1,5 +1,7 @@
 <template>
-  <milnode-page-container :title="$t('pages.home.privacy.title')">
+  <milnode-page-container
+    :back-action="{ to: { name: 'home/Home' } }"
+    :details="{ title: $t('pages.home.privacy.title') }">
     <v-layout wrap>
       <v-flex xs12>
         <section>

@@ -101,6 +101,10 @@ export default {
       description: 'The page you were looking for does not exist',
       buttonText: 'Get me out of here!'
     },
+    menu: {
+      backToHomePage: 'Back to Home page',
+      more: 'More options'
+    },
     home: {
       about: {
         title: 'About',

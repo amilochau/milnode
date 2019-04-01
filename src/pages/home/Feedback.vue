@@ -1,5 +1,7 @@
 <template>
-  <milnode-page-container :title="$t('pages.home.feedback.title')">
+  <milnode-page-container
+    :back-action="{ to: { name: 'home/Home' } }"
+    :details="{ title: $t('pages.home.feedback.title') }">
     <v-layout wrap>
       <v-flex xs12>
         <milnode-help-contacts-description
