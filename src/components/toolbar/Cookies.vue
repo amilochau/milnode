@@ -1,6 +1,6 @@
 <template>
   <v-toolbar
-    v-show="showCookiesBar"
+    v-if="showCookiesBar"
     dense
     class="cookies-menu blue lighten-3 elevation-2">
     <v-icon class="ml-3">gavel</v-icon>
