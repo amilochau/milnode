@@ -57,12 +57,8 @@ import homePages from './../../data/pages/home'
 export default {
   data () {
     return {
-      contacts: new Contacts()
-    }
-  },
-  computed: {
-    homePages () {
-      return homePages
+      contacts: new Contacts(),
+      homePages
     }
   },
   async beforeRouteEnter (to, from, next) {

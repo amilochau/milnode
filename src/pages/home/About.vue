@@ -77,12 +77,8 @@ export default {
       applicationInformation: {
         definitionName: null,
         releaseName: null
-      }
-    }
-  },
-  computed: {
-    homePages () {
-      return homePages
+      },
+      homePages
     }
   },
   async beforeRouteEnter (to, from, next) {
