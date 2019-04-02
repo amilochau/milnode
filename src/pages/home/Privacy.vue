@@ -35,9 +35,9 @@
 import homePages from './../../data/pages/home'
 
 export default {
-  computed: {
-    homePages () {
-      return homePages
+  data () {
+    return {
+      homePages
     }
   }
 }

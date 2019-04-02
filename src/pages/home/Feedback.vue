@@ -58,14 +58,12 @@ export default {
       feedback: {
         rating: 0,
         comment: null
-      }
+      },
+      homePages
     }
   },
   computed: {
-    ...mapGetters('load', ['loading']),
-    homePages () {
-      return homePages
-    }
+    ...mapGetters('load', ['loading'])
   },
   methods: {
     async sendFeedback () {
