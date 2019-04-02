@@ -8,10 +8,8 @@
         :key="i"
         :prepend-icon="item.icon"
         no-action>
-        <template #activator="group">
-          <v-list-tile
-            v-on="group.on"
-            ripple>
+        <template #activator>
+          <v-list-tile ripple>
             <v-list-tile-content>
               <v-list-tile-title>{{ $t(item.title) }}</v-list-tile-title>
             </v-list-tile-content>
