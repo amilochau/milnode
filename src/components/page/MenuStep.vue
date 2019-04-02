@@ -1,5 +1,5 @@
 <template>
-  <v-tooltip right>
+  <v-tooltip bottom>
     <template #activator="tooltip">
       <v-btn
         v-on="tooltip.on"
