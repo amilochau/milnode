@@ -1,6 +1,6 @@
 <template>
   <v-toolbar
-    class="milnode-toolbar pr-2"
+    class="milnode-toolbar elevation-1 pr-2"
     :absolute="absolute"
     dense>
     <v-tooltip
