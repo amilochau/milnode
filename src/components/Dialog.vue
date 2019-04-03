@@ -3,9 +3,10 @@
     v-model="dialog"
     :max-width="maxWidth"
     :persistent="persistent"
+    scrollable
     @keydown.esc="dialog = false">
-    <v-card>
-      <v-form @submit.prevent="save">
+    <v-form @submit.prevent="save"> 
+      <v-card>
         <v-card-title class="headline">{{ title }}</v-card-title>
         <v-card-actions v-if="$slots['header-actions']">
           <slot name="header-actions"/>
@@ -22,15 +23,15 @@
             v-if="!hideCancel"
             :disabled="loading"
             flat
-            @click.native="cancel">{{ cancelText }}</v-btn>
+            @click="cancel">{{ cancelText }}</v-btn>
           <v-btn
             :disabled="loading || disableSave"
-            class="blue--text text--darken-1"
+            class="milnode-dialog-primary"
             flat
             type="submit">{{ saveText }}</v-btn>
         </v-card-actions>
-      </v-form>
-    </v-card>
+      </v-card>
+    </v-form>
   </v-dialog>
 </template>
 
