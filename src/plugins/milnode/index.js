@@ -1,6 +1,7 @@
 import navigationDrawerItems from './../../data/layout/navigation-drawer-items'
 import toolbarAccountItems from './../../data/layout/toolbar-account-items'
 import toolbarLanguagesItems from './../../data/layout/toolbar-languages-items'
+import homePages from './../../data/pages/home'
 
 var mnOptions
 
@@ -33,6 +34,7 @@ const MilNodeCore = {
     Vue.prototype.$toolbarApplicationItems = layoutSettings.applicationItems || []
     Vue.prototype.$toolbarLanguagesItems = [...(layoutSettings.languagesItems || []), ...toolbarLanguagesItems]
     Vue.prototype.$enableTheme = layoutSettings.enableTheme
+    Vue.prototype.$homePages = homePages.filter(r => !Vue.prototype.$noBack || !(r.options && r.options.backRequired))
 
     function registerComponents (components) {
       if (components) {

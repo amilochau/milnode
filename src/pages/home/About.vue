@@ -1,7 +1,7 @@
 <template>
   <milnode-page-container
     :back-action="{ to: { name: 'home/Home' } }"
-    :pages="homePages">
+    :pages="$homePages">
     <v-layout wrap>
       <v-flex
         xs12
@@ -69,7 +69,6 @@
 
 <script>
 import applicationService from './../../services/application.service'
-import homePages from './../../data/pages/home'
 
 export default {
   data () {
@@ -77,8 +76,7 @@ export default {
       applicationInformation: {
         definitionName: null,
         releaseName: null
-      },
-      homePages
+      }
     }
   },
   async beforeRouteEnter (to, from, next) {
