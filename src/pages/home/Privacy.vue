@@ -1,7 +1,7 @@
 <template>
   <milnode-page-container
     :back-action="{ to: { name: 'home/Home' } }"
-    :pages="homePages">
+    :pages="$homePages">
     <v-layout wrap>
       <v-flex xs12>
         <section>
@@ -30,15 +30,3 @@
     </v-layout>
   </milnode-page-container>
 </template>
-
-<script>
-import homePages from './../../data/pages/home'
-
-export default {
-  data () {
-    return {
-      homePages
-    }
-  }
-}
-</script>

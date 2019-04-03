@@ -1,7 +1,7 @@
 <template>
   <milnode-page-container
     :back-action="{ to: { name: 'home/Home' } }"
-    :pages="homePages">
+    :pages="$homePages">
     <v-layout wrap>
       <v-flex xs12>
         <milnode-help-contacts-description
@@ -50,7 +50,6 @@
 import { mapGetters } from 'vuex'
 import { EventBus } from './../../event-bus'
 import applicationService from './../../services/application.service'
-import homePages from './../../data/pages/home'
 
 export default {
   data () {
@@ -58,8 +57,7 @@ export default {
       feedback: {
         rating: 0,
         comment: null
-      },
-      homePages
+      }
     }
   },
   computed: {
