@@ -39,7 +39,7 @@
       disabled>
       # {{ details.id }}
     </v-chip>
-    <v-toolbar-title v-if="details.title">{{ $t(details.title) }}</v-toolbar-title>
+    <v-toolbar-title v-if="details.title">{{ details.title }}</v-toolbar-title>
     <v-spacer/>
     <slot name="actions"/>
     <v-tooltip
