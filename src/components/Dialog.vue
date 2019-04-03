@@ -25,7 +25,7 @@
             @click.native="cancel">{{ cancelText }}</v-btn>
           <v-btn
             :disabled="loading || disableSave"
-            class="blue--text text--darken-1"
+            class="milnode-dialog-primary"
             flat
             type="submit">{{ saveText }}</v-btn>
         </v-card-actions>
