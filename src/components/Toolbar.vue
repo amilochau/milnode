@@ -1,6 +1,6 @@
 <template>
   <v-toolbar
-    class="milnode-toolbar milnode-toolbar-app elevation-0"
+    class="milnode-toolbar elevation-1"
     dense
     app
     absolute
