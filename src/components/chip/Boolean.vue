@@ -1,10 +1,10 @@
 <template>
   <v-chip
-    :class="className"
+    :class="chipClass"
     disabled
     small>
     <v-avatar class="mr-0">
-      <v-icon :class="className">{{ icon }}</v-icon>
+      <v-icon :class="chipClass">{{ icon }}</v-icon>
     </v-avatar>
     {{ text }}
   </v-chip>
@@ -23,9 +23,9 @@ export default {
     }
   },
   computed: {
-    className () {
+    chipClass () {
       if (this.value) {
-        return 'success white--text'
+        return 'success black--text'
       } else {
         return 'warning black--text'
       }
