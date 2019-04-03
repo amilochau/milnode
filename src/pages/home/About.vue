@@ -14,7 +14,7 @@
         md6
         order-md3
         class="mb-3">
-        <v-list>
+        <v-list class="elevation-1">
           <v-list-tile>
             <v-list-tile-action>
               <v-icon>web</v-icon>
@@ -44,7 +44,7 @@
         md6
         order-md4
         class="mb-3">
-        <v-list>
+        <v-list class="elevation-1">
           <v-list-tile>
             <v-list-tile-action>
               <v-icon>room</v-icon>
