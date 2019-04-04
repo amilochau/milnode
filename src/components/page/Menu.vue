@@ -35,7 +35,7 @@
     </v-toolbar-items>
     <v-chip
       v-if="details.id"
-      class="grey darken-3 white--text"
+      class="grey darken-3 white--text hidden-xs-only"
       disabled>
       # {{ details.id }}
     </v-chip>
