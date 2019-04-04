@@ -1,4 +1,4 @@
-
+// See https://material.io/tools/icons
 const MILNODE_ICONS_MATERIAL = {
   'delete': 'delete',
   'edit': 'edit',
@@ -38,42 +38,43 @@ const MILNODE_ICONS_MATERIAL = {
   }
 }
 
+// See https://materialdesignicons.com/
 const MILNODE_ICONS_MDI = {
   'delete': 'mdi-delete',
   'edit': 'mdi-pencil',
-  'add': 'mdi-add',
-  'search': 'mdi-search',
+  'add': 'mdi-plus',
+  'search': 'mdi-magnify',
   'refresh': 'mdi-refresh',
   'check': 'mdi-check',
   'close': 'mdi-close',
-  'place': 'mdi-place',
+  'place': 'mdi-map-marker',
   'email': 'mdi-email',
   'link': 'mdi-link',
   'domain': 'mdi-domain',
   'home': 'mdi-home',
-  'more_vert': 'mdi-more_vert',
-  'account_circle': 'mdi-account_circle',
+  'more_vert': 'mdi-dots-vertical',
+  'account_circle': 'mdi-account-circle',
   'face': 'mdi-face',
-  'login': 'mdi-power_settings_new',
-  'logout': 'mdi-power_settings_new',
+  'login': 'mdi-power',
+  'logout': 'mdi-power',
   'apps': 'mdi-apps',
   'gavel': 'mdi-gavel',
   'settings': 'mdi-settings',
-  'info': 'mdi-info',
-  'expand_less': 'mdi-expand_less',
-  'expand_more': 'mdi-expand_more',
+  'info': 'mdi-information',
+  'expand_less': 'mdi-chevron-up',
+  'expand_more': 'mdi-chevron-down',
   'web': 'mdi-web',
-  'person_pin': 'mdi-person_pin',
-  'room': 'mdi-room',
-  'hot_tub': 'mdi-hot_tub',
-  'help': 'mdi-help',
-  'feedback': 'mdi-feedback',
+  'person_pin': 'mdi-account-box',
+  'room': 'mdi-map-marker',
+  'hot_tub': 'mdi-hot-tub',
+  'help': 'mdi-help-circle',
+  'feedback': 'mdi-message-alert',
   'copyright': 'mdi-copyright',
   snackbar: {
-    'info': 'mdi-info',
-    'success': 'mdi-check_circle',
-    'warning': 'mdi-priority_high',
-    'error': 'mdi-warning'
+    'info': 'mdi-information',
+    'success': 'mdi-checkbox-marked-circle',
+    'warning': 'mdi-alert-octagon',
+    'error': 'mdi-alert'
   }
 }
 
