@@ -28,18 +28,21 @@
         :key="`page-${i}`"
         :page="page"/>
       <v-divider
-        v-if="pages.length && details.title"
+        v-if="pages.length && ($slots.details || !$slots.details && details.title)"
         class="mx-2"
         inset
         vertical/>
     </v-toolbar-items>
-    <v-chip
-      v-if="details.id"
-      class="grey darken-3 white--text hidden-xs-only"
-      disabled>
-      # {{ details.id }}
-    </v-chip>
-    <v-toolbar-title v-if="details.title">{{ details.title }}</v-toolbar-title>
+    <slot name="details"/>
+    <template v-if="!$slots.details">
+      <v-chip
+        v-if="details.id"
+        class="grey darken-3 white--text hidden-xs-only"
+        disabled>
+        # {{ details.id }}
+      </v-chip>
+      <v-toolbar-title v-if="details.title">{{ details.title }}</v-toolbar-title>
+    </template>
     <v-spacer/>
     <slot name="actions"/>
     <v-tooltip
