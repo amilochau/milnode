@@ -2,7 +2,7 @@
   <v-text-field
     v-model="search"
     :label="$t('fields.search')"
-    append-icon="search"
+    :append-icon="$icons.search"
     class="mx-3 hidden-xs-only"
     single-line />
 </template>

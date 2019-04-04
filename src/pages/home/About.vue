@@ -17,7 +17,7 @@
         <v-list class="elevation-1">
           <v-list-tile>
             <v-list-tile-action>
-              <v-icon>web</v-icon>
+              <v-icon>{{ $icons.web }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ $applicationName }}</v-list-tile-title>
@@ -25,7 +25,7 @@
           </v-list-tile>
           <v-list-tile>
             <v-list-tile-action>
-              <v-icon>person_pin</v-icon>
+              <v-icon>{{ $icons.person_pin }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ $t('pages.home.about.developedBy', { contact: $applicationContact }) }}</v-list-tile-title>
@@ -47,7 +47,7 @@
         <v-list class="elevation-1">
           <v-list-tile>
             <v-list-tile-action>
-              <v-icon>room</v-icon>
+              <v-icon>{{ $icons.room }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ applicationInformation.definition }}</v-list-tile-title>
@@ -55,7 +55,7 @@
           </v-list-tile>
           <v-list-tile>
             <v-list-tile-action>
-              <v-icon>hot_tub</v-icon>
+              <v-icon>{{ $icons.hot_tub }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ applicationInformation.name }}</v-list-tile-title>

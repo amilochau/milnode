@@ -8,7 +8,7 @@
         class="ma-0"
         icon
         @click="$emit('click')">
-        <v-icon>search</v-icon>
+        <v-icon>{{ $icons.search }}</v-icon>
       </v-btn>
     </template>
     <span>{{ $t('buttons.read') }}</span>

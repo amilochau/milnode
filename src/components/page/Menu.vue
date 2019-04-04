@@ -14,7 +14,7 @@
             :to="backAction.to"
             exact
             icon>
-            <v-icon>{{ backAction.icon || 'home' }}</v-icon>
+            <v-icon>{{ backAction.icon || $icons.home }}</v-icon>
           </v-btn>
         </template>
         <span>{{ $t(backAction.title) || $t('pages.menu.backToHomePage')}}</span>
@@ -65,7 +65,7 @@
           :aria-label="$t(more.title) || $t('pages.menu.more')"
           icon
           @click="$emit('toggle')">
-          <v-icon>{{ more.icon || 'more_vert' }}</v-icon>
+          <v-icon>{{ more.icon || $icons.more_vert }}</v-icon>
         </v-btn>
       </template>
       <span>{{ $t(more.title) || $t('pages.menu.more') }}</span>

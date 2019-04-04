@@ -3,11 +3,14 @@ import fr from 'vuetify/es5/locale/fr'
 
 const VuetifyCore = {
   install (Vue, options = {}) {
+    // options.layout
+    let layoutSettings = options.layout || {}
+
     Vue.use(Vuetify, {
       lang: {
         locales: { fr }
       },
-      iconfont: 'md'
+      iconfont: layoutSettings.iconfont || 'md'
     })
   }
 }

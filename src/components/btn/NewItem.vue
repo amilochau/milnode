@@ -8,7 +8,7 @@
         color="primary"
         icon
         @click="$emit('click')">
-        <v-icon>add</v-icon>
+        <v-icon>{{ $icons.add }}</v-icon>
       </v-btn>
     </template>
     <span>{{ computedTitle }}</span>

@@ -8,7 +8,7 @@
         class="ma-0 error--text"
         icon
         @click="$emit('click')">
-        <v-icon>delete</v-icon>
+        <v-icon>{{ $icons.delete }}</v-icon>
       </v-btn>
     </template>
     <span>{{ $t('buttons.delete') }}</span>
