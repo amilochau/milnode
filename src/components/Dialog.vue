@@ -5,7 +5,9 @@
     :persistent="persistent"
     scrollable
     @keydown.esc="dialog = false">
-    <v-form @submit.prevent="save"> 
+    <v-form
+      style="width:100%"
+      @submit.prevent="save"> 
       <v-card>
         <v-card-title class="headline">{{ title }}</v-card-title>
         <v-card-actions v-if="$slots['header-actions']">
@@ -26,7 +28,7 @@
             @click="cancel">{{ cancelText }}</v-btn>
           <v-btn
             :disabled="loading || disableSave"
-            class="milnode-dialog-primary"
+            :class="saveClass || 'milnode-dialog-primary'"
             flat
             type="submit">{{ saveText }}</v-btn>
         </v-card-actions>
@@ -53,6 +55,10 @@ export default {
       default: ''
     },
     saveTitle: {
+      type: String,
+      default: ''
+    },
+    saveClass: {
       type: String,
       default: ''
     },
