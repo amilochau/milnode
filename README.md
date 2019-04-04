@@ -59,6 +59,9 @@ If you want to propose code source changes, please follow the steps below.
    @import '~material-design-icons-iconfont/dist/material-design-icons.css'
    @import '~milnode/src/stylus/app.styl'
    ```
+
+   Note that you can use other icon fonts, by defining `layout.iconfont` setting, and importing the correct style. See [here](https://vuetifyjs.com/en/framework/icons) for more details.
+
 4. Add proper compilation settings into your `vue.config.js` file:
    ```js
    const webpack = require('webpack')
@@ -112,6 +115,7 @@ The following settings are available.
 | `layout.applicationItems` | `[]` | Items to add in applications toolbar; let this array empty or undefined to disable the applications toolbar |
 | `layout.languagesItems` | `[]` | Languages to propose on settings toolbar |
 | `layout.enableTheme` | `false` | Enable dark theme support on settings toolbar |
+| `layout.iconfont` | `md` | Icon font to use **`BETA`** |
 | **`services`** | `{}` | **Services (API) information** |
 | `services.disabled` | `false` | Disable services support, and disabled Help, Feedback and About pages |
 | `services.baseUrl` | `'http://mysite.com/api'` | Base URL for your API |
@@ -141,7 +145,8 @@ Vue.use(MilNode, {
     accountItems: [],
     applicationItems: [],
     languagesItems: [],
-    enableTheme: false
+    enableTheme: false,
+    iconfont: 'md'
   },
   services: {
     disabled: false,
