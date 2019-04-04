@@ -31,7 +31,7 @@ export default {
       }
     },
     icon () {
-      return this.value ? 'check' : 'close'
+      return this.value ? this.$icons.check : this.$icons.close
     }
   }
 }

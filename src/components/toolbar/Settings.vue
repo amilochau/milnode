@@ -13,7 +13,7 @@
             v-on="menu.on"
             :aria-label="$t('layout.settings.title')"
             icon>
-            <v-icon>settings</v-icon>
+            <v-icon>{{ $icons.settings }}</v-icon>
           </v-btn>
         </template>
         <v-card>

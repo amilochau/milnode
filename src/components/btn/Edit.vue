@@ -8,7 +8,7 @@
         class="ma-0"
         icon
         @click="$emit('click')">
-        <v-icon>edit</v-icon>
+        <v-icon>{{ $icons.edit }}</v-icon>
       </v-btn>
     </template>
     <span>{{ $t('buttons.edit') }}</span>

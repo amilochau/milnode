@@ -3,6 +3,8 @@ import toolbarAccountItems from './../../data/layout/toolbar-account-items'
 import toolbarLanguagesItems from './../../data/layout/toolbar-languages-items'
 import homePages from './../../data/pages/home'
 
+import icons from './icons'
+
 var mnOptions
 
 const MilNodeCore = {
@@ -27,14 +29,23 @@ const MilNodeCore = {
 
     // options.layout
     let layoutSettings = options.layout || {}
-    Vue.prototype.$navigationDrawerItems = [...(layoutSettings.navigationDrawerItems || []), ...navigationDrawerItems]
+    Vue.prototype.$icons = icons(layoutSettings.iconfont)
+
+    function transformData (items) {
+      return items.map(x => {
+        x.icon = Vue.prototype.$icons[x.icon]
+        return x
+      })
+    }
+
+    Vue.prototype.$navigationDrawerItems = [...(layoutSettings.navigationDrawerItems || []), ...transformData(navigationDrawerItems)]
       .filter(r => !Vue.prototype.$noBack || !(r.options && r.options.backRequired))
       .filter(r => !Vue.prototype.$noAuth || !(r.options && r.options.authRequired))
-    Vue.prototype.$toolbarAccountItems = [...(layoutSettings.accountItems || []), ...toolbarAccountItems]
+    Vue.prototype.$toolbarAccountItems = [...(layoutSettings.accountItems || []), ...transformData(toolbarAccountItems)]
     Vue.prototype.$toolbarApplicationItems = layoutSettings.applicationItems || []
-    Vue.prototype.$toolbarLanguagesItems = [...(layoutSettings.languagesItems || []), ...toolbarLanguagesItems]
+    Vue.prototype.$toolbarLanguagesItems = [...(layoutSettings.languagesItems || []), ...transformData(toolbarLanguagesItems)]
     Vue.prototype.$enableTheme = layoutSettings.enableTheme
-    Vue.prototype.$homePages = homePages.filter(r => !Vue.prototype.$noBack || !(r.options && r.options.backRequired))
+    Vue.prototype.$homePages = transformData(homePages).filter(r => !Vue.prototype.$noBack || !(r.options && r.options.backRequired))
 
     function registerComponents (components) {
       if (components) {

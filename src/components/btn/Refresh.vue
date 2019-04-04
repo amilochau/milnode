@@ -8,7 +8,7 @@
         class="grey lighten-2"
         icon
         @click="$emit('click')">
-        <v-icon>refresh</v-icon>
+        <v-icon>{{ $icons.refresh }}</v-icon>
       </v-btn>
     </template>
     <span>{{ $t('buttons.refresh') }}</span>

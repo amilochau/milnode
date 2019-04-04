@@ -12,7 +12,7 @@
           :href="'mailto:' + user.email"
           ripple>
           <v-list-tile-action>
-            <v-icon>email</v-icon>
+            <v-icon>{{ $icons.email }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ user.email }}</v-list-tile-title>
@@ -22,7 +22,7 @@
           v-if="user.place"
           ripple>
           <v-list-tile-action>
-            <v-icon>domain</v-icon>
+            <v-icon>{{ $icons.domain }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ user.place }}</v-list-tile-title>

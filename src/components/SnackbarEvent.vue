@@ -8,7 +8,7 @@
     right>
     <v-layout row wrap align-center>
       <v-flex v-if="icon" shrink class="mr-3">
-        <v-icon>info</v-icon>
+        <v-icon>{{ $icons.info }}</v-icon>
       </v-flex>
       <v-flex grow>
         <span style="white-space: pre-wrap">{{ message }}</span>
@@ -19,8 +19,8 @@
           icon
           class="ml-2"
           @click.native="expanded = !expanded">
-          <v-icon v-if="expanded">expand_less</v-icon>
-          <v-icon v-else>expand_more</v-icon>
+          <v-icon v-if="expanded">{{ $icons.expand_less }}</v-icon>
+          <v-icon v-else>{{ $icons.expand_more }}</v-icon>
         </v-btn>
         <v-btn
           flat
@@ -52,16 +52,16 @@ export default {
   },
   created () {
     EventBus.$on('info', (errorMessages) => {
-      this.enableSnackbar(errorMessages, 'info', this.$i18n.t('snackbars.icons.info'))
+      this.enableSnackbar(errorMessages, 'info', this.$icons.snackbar.info)
     })
     EventBus.$on('success', (errorMessages) => {
-      this.enableSnackbar(errorMessages, 'success', this.$i18n.t('snackbars.icons.success'))
+      this.enableSnackbar(errorMessages, 'success', this.$icons.snackbar.success)
     })
     EventBus.$on('warning', (errorMessages) => {
-      this.enableSnackbar(errorMessages, 'warning', this.$i18n.t('snackbars.icons.warning'))
+      this.enableSnackbar(errorMessages, 'warning', this.$icons.snackbar.warning)
     })
     EventBus.$on('error', (errorMessages) => {
-      this.enableSnackbar(errorMessages, 'error', this.$i18n.t('snackbars.icons.error'))
+      this.enableSnackbar(errorMessages, 'error', this.$icons.snackbar.error)
     })
   },
   methods: {

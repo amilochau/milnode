@@ -33,13 +33,7 @@ export default {
   },
   snackbars: {
     close: 'Fermer',
-    error: 'Erreur',
-    icons: {
-      info: 'info',
-      success: 'check_circle',
-      warning: 'priority_high',
-      error: 'warning'
-    }
+    error: 'Erreur'
   },
   layout: {
     drawer: {

@@ -14,7 +14,7 @@
             v-on="menu.on"
             :aria-label="$t('layout.applications.title')"
             icon>
-            <v-icon>apps</v-icon>
+            <v-icon>{{ $icons.apps }}</v-icon>
           </v-btn>
         </template>
         <v-card>

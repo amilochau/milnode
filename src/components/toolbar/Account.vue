@@ -11,14 +11,14 @@
         v-on="menu.on"
         :aria-label="$t('layout.account.title')"
         icon>
-        <v-icon>account_circle</v-icon>
+        <v-icon>{{ $icons.account_circle }}</v-icon>
       </v-btn>
     </template>
     <v-card>
       <v-list dense>
         <v-list-tile avatar>
           <v-list-tile-avatar>
-            <v-icon class="grey lighten-1 white--text">face</v-icon>
+            <v-icon class="grey lighten-1 white--text">{{ $icons.face }}</v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{ profile.given_name }} {{ profile.family_name }}</v-list-tile-title>
@@ -42,7 +42,7 @@
         class="primary"
         icon
         @click="login">
-        <v-icon>power_settings_new</v-icon>
+        <v-icon>{{ $icons.login }}</v-icon>
       </v-btn>
     </template>
     <span>{{ $t('layout.account.login') }}</span>
