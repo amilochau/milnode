@@ -10,6 +10,9 @@
       <template #actions>
         <slot name="actions"/>
       </template>
+      <template #details>
+        <slot name="details"/>
+      </template>
     </milnode-page-menu>
     <v-container
       :fluid="fluid"

@@ -3,43 +3,57 @@
     class="milnode-toolbar elevation-1 pr-2"
     :absolute="absolute"
     dense>
-    <v-tooltip
-      v-if="backAction.to"
-      right>
-      <template #activator="tooltip">
-        <v-btn
-          v-on="tooltip.on"
-          :aria-label="$t(backAction.title) || $t('pages.menu.backToHomePage')"
-          :to="backAction.to"
-          exact
-          icon>
-          <v-icon>{{ backAction.icon || 'home' }}</v-icon>
-        </v-btn>
-      </template>
-      <span>{{ $t(backAction.title) || $t('pages.menu.backToHomePage')}}</span>
-    </v-tooltip>
-    <v-divider
-      v-if="backAction.to"
-      class="mx-2"
-      vertical/>
-    <v-toolbar-items>
-      <milnode-page-menu-step
-        v-for="(page, i) in pages"
-        :key="`page-${i}`"
-        :page="page"/>
+    <template v-if="!$slots.back">
+      <v-tooltip
+        v-if="backAction.to"
+        right>
+        <template #activator="tooltip">
+          <v-btn
+            v-on="tooltip.on"
+            :aria-label="$t(backAction.title) || $t('pages.menu.backToHomePage')"
+            :to="backAction.to"
+            exact
+            icon>
+            <v-icon>{{ backAction.icon || 'home' }}</v-icon>
+          </v-btn>
+        </template>
+        <span>{{ $t(backAction.title) || $t('pages.menu.backToHomePage')}}</span>
+      </v-tooltip>
       <v-divider
-        v-if="pages.length && details.title"
+        v-if="backAction.to"
+        class="mx-2"
+        vertical/>
+    </template>
+    <slot name="back"/>
+    <v-toolbar-items>
+      <template v-for="(page, i) in pages">
+        <v-divider
+          v-if="page.divider"
+          :key="`page-${i}`"
+          class="mx-1"
+          inset
+          vertical/>
+        <milnode-page-menu-step
+          v-else
+          :key="`page-${i}`"
+          :page="page"/>
+      </template>
+      <v-divider
+        v-if="pages.length && ($slots.details || !$slots.details && details.title)"
         class="mx-2"
         inset
         vertical/>
     </v-toolbar-items>
-    <v-chip
-      v-if="details.id"
-      class="grey darken-3 white--text"
-      disabled>
-      # {{ details.id }}
-    </v-chip>
-    <v-toolbar-title v-if="details.title">{{ details.title }}</v-toolbar-title>
+    <slot name="details"/>
+    <template v-if="!$slots.details">
+      <v-chip
+        v-if="details.id"
+        class="grey darken-3 white--text hidden-xs-only"
+        disabled>
+        # {{ details.id }}
+      </v-chip>
+      <v-toolbar-title v-if="details.title">{{ details.title }}</v-toolbar-title>
+    </template>
     <v-spacer/>
     <slot name="actions"/>
     <v-tooltip
