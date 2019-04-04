@@ -3,30 +3,41 @@
     class="milnode-toolbar elevation-1 pr-2"
     :absolute="absolute"
     dense>
-    <v-tooltip
-      v-if="backAction.to"
-      right>
-      <template #activator="tooltip">
-        <v-btn
-          v-on="tooltip.on"
-          :aria-label="$t(backAction.title) || $t('pages.menu.backToHomePage')"
-          :to="backAction.to"
-          exact
-          icon>
-          <v-icon>{{ backAction.icon || 'home' }}</v-icon>
-        </v-btn>
-      </template>
-      <span>{{ $t(backAction.title) || $t('pages.menu.backToHomePage')}}</span>
-    </v-tooltip>
-    <v-divider
-      v-if="backAction.to"
-      class="mx-2"
-      vertical/>
+    <template v-if="!$slots.back">
+      <v-tooltip
+        v-if="backAction.to"
+        right>
+        <template #activator="tooltip">
+          <v-btn
+            v-on="tooltip.on"
+            :aria-label="$t(backAction.title) || $t('pages.menu.backToHomePage')"
+            :to="backAction.to"
+            exact
+            icon>
+            <v-icon>{{ backAction.icon || 'home' }}</v-icon>
+          </v-btn>
+        </template>
+        <span>{{ $t(backAction.title) || $t('pages.menu.backToHomePage')}}</span>
+      </v-tooltip>
+      <v-divider
+        v-if="backAction.to"
+        class="mx-2"
+        vertical/>
+    </template>
+    <slot name="back"/>
     <v-toolbar-items>
-      <milnode-page-menu-step
-        v-for="(page, i) in pages"
-        :key="`page-${i}`"
-        :page="page"/>
+      <template v-for="(page, i) in pages">
+        <v-divider
+          v-if="page.divider"
+          :key="`page-${i}`"
+          class="mx-1"
+          inset
+          vertical/>
+        <milnode-page-menu-step
+          v-else
+          :key="`page-${i}`"
+          :page="page"/>
+      </template>
       <v-divider
         v-if="pages.length && ($slots.details || !$slots.details && details.title)"
         class="mx-2"
