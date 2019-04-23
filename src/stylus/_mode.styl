@@ -8,16 +8,19 @@
     color: $grey.darken-1 !important
   .milnode-dialog-primary
     color: $blue.darken-1 !important
-  .milnode-step-btn.active
+  .milnode-step-btn.active // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
     border-bottom: $blue.darken-2 solid 2px
     color: $blue.darken-2
     .avatar
       background-color: $blue.darken-2
       border-color: $blue.darken-2
-  .milnode-step-btn:not(.active)
+  .milnode-step-btn:not(.active) // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
     .avatar
       background-color: $grey.darken-2
       border-color: $grey.darken-2
+  .milnode-step-btn-icon.active
+    border-bottom: $blue.darken-2 solid 2px
+    color: $blue.darken-2
 
 .theme--dark
   .table-toolbar, .milnode-table-toolbar // TODO v0.7 Remove .table-toolbar, use .milnode-table-toolbar instead
@@ -26,26 +29,32 @@
     background-color: $grey.darken-4 !important
   .milnode-dialog-primary
     color: $blue.lighten-1 !important
-  .milnode-step-btn.active
+  .milnode-step-btn.active // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
     border-bottom: $blue.lighten-2 solid 2px
     color: $blue.lighten-2
     .avatar
       background-color: $blue.lighten-2
       border-color: $blue.lighten-2
-  .milnode-step-btn:not(.active)
+  .milnode-step-btn:not(.active) // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
     .avatar
       background-color: $grey.lighten-2
       border-color: $grey.lighten-2
+  .milnode-step-btn-icon.active
+    border-bottom: $blue.lighten-2 solid 2px
+    color: $blue.lighten-2
 
 @media (max-width: $grid-breakpoints.sm - 1)
-  .milnode-step-btn
+  .milnode-step-btn // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
     min-width: 0
     width: 48px
 @media (min-width: $grid-breakpoints.sm)
-  .milnode-step-btn:not(.active)
+  .milnode-step-btn:not(.active) // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
     min-width: 0
     width: 72px
 
-.milnode-step-btn:not(.active)
+.milnode-step-btn:not(.active) // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
   .step-title
     display: none !important
+.milnode-step-btn-icon.active
+  border-radius: 0
+  margin-bottom: 4px
