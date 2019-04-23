@@ -1,6 +1,7 @@
 <template>
   <span>
     <milnode-page-menu
+      v-if="!hideMenu"
       :absolute="fillHeight"
       :back-action="backAction"
       :pages="pages"
@@ -53,6 +54,10 @@ export default {
       default: false
     },
     fillHeight: {
+      type: Boolean,
+      default: false
+    },
+    hideMenu: {
       type: Boolean,
       default: false
     }
