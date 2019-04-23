@@ -49,7 +49,13 @@ export default {
     },
     setMeta () {
       const name = this.$route.name
-      this.meta = this.$t('meta')[name] || {}
+      this.meta = this.$t('meta')[name] || this.getFallbackMeta()
+    },
+    getFallbackMeta () {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('No meta defined for route ' + (this.$route.name))
+      }
+      return {}
     }
   }
 }

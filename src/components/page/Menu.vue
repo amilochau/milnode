@@ -53,6 +53,7 @@
         # {{ details.id }}
       </v-chip>
       <v-toolbar-title v-if="details.title">{{ details.title }}</v-toolbar-title>
+      <v-toolbar-title v-else class="hidden-xs-only">{{ title }}</v-toolbar-title>
     </template>
     <v-spacer/>
     <slot name="actions"/>
@@ -74,6 +75,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: {
     backAction: {
@@ -101,6 +104,9 @@ export default {
     return {
       toggle: false
     }
+  },
+  computed: {
+    ...mapGetters('app', ['title'])
   }
 }
 </script>
