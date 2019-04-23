@@ -55,6 +55,9 @@
 .milnode-step-btn:not(.active) // TODO v0.7 Remove .milnode-step-btn, use .milnode-step-btn-icon instead
   .step-title
     display: none !important
-.milnode-step-btn-icon.active
-  border-radius: 0
-  margin-bottom: 4px
+.milnode-step-btn-icon
+  &.active
+    border-radius: 0
+    margin-bottom: 4px
+  .number
+    font-style: normal

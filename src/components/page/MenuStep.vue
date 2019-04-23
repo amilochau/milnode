@@ -10,8 +10,8 @@
         exact
         icon
         flat>
-        <v-icon v-if="page.number" class="icon">{{ page.number }}</v-icon>
-        <v-icon v-else-if="page.icon" class="icon">{{ page.icon }}</v-icon>
+        <v-icon v-if="page.number" class="number">{{ page.number }}</v-icon>
+        <v-icon v-else-if="page.icon">{{ page.icon }}</v-icon>
       </v-btn>
     </template>
     <span>{{ $t(page.title) }}</span>
