@@ -3,7 +3,7 @@
     v-if="showCookiesBar"
     dense
     class="cookies-menu blue lighten-3 elevation-2">
-    <v-icon class="ml-3">{{ $icons.gavel }}</v-icon>
+    <v-icon class="ml-3">{{ $icons.cookie }}</v-icon>
     <span class="ml-3 mr-5">{{ $t('layout.privacy.cookiesText') }}</span>
     <v-spacer/>
     <v-btn
