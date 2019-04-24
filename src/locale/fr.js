@@ -2,7 +2,7 @@ export default {
   feedback: {
     title: 'Votre avis',
     catch: 'Votre opinion est importante !',
-    explain: 'Partagez nous votre avis. Tous vos commentaires, ainsi que vos notes, nous mettent au défi d\'améliorer sans cesse WebOptis.',
+    explain: 'Partagez nous votre avis. Tous vos commentaires, ainsi que vos notes, nous mettent au défi d\'améliorer sans cesse votre expérience.',
     comment: 'Commentaire',
     send: 'Envoyer votre avis',
     privacy: 'Votre avis est anonyme. Aucune donnée personnelle n\'est liée à vos notes ou à vos commentaires.',
@@ -10,6 +10,7 @@ export default {
   },
   buttons: {
     delete: 'Supprimer',
+    deleteMany: 'Supprimer',
     edit: 'Modifier',
     read: 'Voir',
     newItem: 'Nouvel élément',
@@ -21,7 +22,11 @@ export default {
     delete: 'Supprimer',
     deleteItem: 'Supprimer l\'élément',
     deleteItemDesc: 'Ceci va supprimer cet élément.',
-    itemName: 'Nom de l\'élément :'
+    itemName: 'Nom de l\'élément :',
+    deleteMany: 'Supprimer',
+    deleteManyItems: 'Supprimer les éléments',
+    deleteManyItemsDesc: 'Ceci va supprimer ces {count} éléments.',
+    itemNames: 'Noms des éléments :'
   },
   errors: {
     notAuthorized: 'Non autorisé',
@@ -109,7 +114,7 @@ export default {
       feedback: {
         title: 'Votre avis',
         catch: 'Votre opinion est importante !',
-        explain: 'Partagez nous votre avis. Tous vos commentaires, ainsi que vos notes, nous mettent au défi d\'améliorer sans cesse WebOptis.',
+        explain: 'Partagez nous votre avis. Tous vos commentaires, ainsi que vos notes, nous mettent au défi d\'améliorer sans cesse votre expérience.',
         comment: 'Commentaire',
         send: 'Envoyer votre avis',
         privacy: 'Votre avis est anonyme. Aucune donnée personnelle n\'est liée à vos notes ou à vos commentaires.',

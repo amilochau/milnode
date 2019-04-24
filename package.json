@@ -1,6 +1,6 @@
 {
   "name": "milnode",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "Vue.js Component Framework, build on top of vuetify",
   "author": {
     "name": "Antoine Milochau",

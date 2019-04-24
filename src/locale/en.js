@@ -2,7 +2,7 @@ export default {
   feedback: {
     title: 'Your feedback',
     catch: 'Your opinion is precious!',
-    explain: 'Share your feedback with us. All your comments and ratings challenge us to continuously improve WebOptis.',
+    explain: 'Share your feedback with us. All your comments and ratings challenge us to continuously improve your experience.',
     comment: 'Comment',
     send: 'Send your feedback',
     privacy: 'Your feedback is anonymous. No personal data is linked with your rating and comment.',
@@ -10,6 +10,7 @@ export default {
   },
   buttons: {
     delete: 'Delete',
+    deleteMany: 'Delete',
     edit: 'Edit',
     read: 'Read',
     newItem: 'New item',
@@ -21,7 +22,11 @@ export default {
     delete: 'Delete',
     deleteItem: 'Delete item',
     deleteItemDesc: 'This will delete this item.',
-    itemName: 'Item name:'
+    itemName: 'Item name:',
+    deleteMany: 'Delete',
+    deleteManyItems: 'Delete many items',
+    deleteManyItemsDesc: 'This will delete {count} items.',
+    itemNames: 'Item names:'
   },
   errors: {
     notAuthorized: 'Not authorized',
@@ -109,7 +114,7 @@ export default {
       feedback: {
         title: 'Your feedback',
         catch: 'Your opinion is precious!',
-        explain: 'Share your feedback with us. All your comments and ratings challenge us to continuously improve WebOptis.',
+        explain: 'Share your feedback with us. All your comments and ratings challenge us to continuously improve your experience.',
         comment: 'Comment',
         send: 'Send your feedback',
         privacy: 'Your feedback is anonymous. No personal data is linked with your rating and comment.',
