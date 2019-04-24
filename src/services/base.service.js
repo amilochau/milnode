@@ -97,7 +97,7 @@ export default class BaseService {
       let errorMessages = this.analyzeError(error)
       if (settings.load) store.dispatch('load/stopLoading')
       if (settings.errors) { EventBus.$emit('error', errorMessages) }
-      throw new Error(errorMessages)
+      throw errorMessages
     }
   }
 
@@ -112,7 +112,7 @@ export default class BaseService {
       let errorMessages = this.analyzeError(error)
       if (settings.load) store.dispatch('load/stopLoading')
       if (settings.errors) { EventBus.$emit('error', errorMessages) }
-      throw new Error(errorMessages)
+      throw errorMessages
     }
   }
 
@@ -127,7 +127,7 @@ export default class BaseService {
       let errorMessages = this.analyzeError(error)
       if (settings.load) store.dispatch('load/stopLoading')
       if (settings.errors) { EventBus.$emit('error', errorMessages) }
-      throw new Error(errorMessages)
+      throw errorMessages
     }
   }
 
@@ -142,7 +142,7 @@ export default class BaseService {
       let errorMessages = this.analyzeError(error)
       if (settings.load) store.dispatch('load/stopLoading')
       if (settings.errors) { EventBus.$emit('error', errorMessages) }
-      throw new Error(errorMessages)
+      throw errorMessages
     }
   }
 
@@ -166,7 +166,7 @@ export default class BaseService {
       let errorMessages = this.analyzeError(error)
       if (settings.load) store.dispatch('load/stopLoading')
       if (settings.errors) { EventBus.$emit('error', errorMessages) }
-      throw new Error(errorMessages)
+      throw errorMessages
     }
   }
 
@@ -183,7 +183,7 @@ export default class BaseService {
       let errorMessages = this.analyzeError(error)
       if (settings.load) store.dispatch('load/stopLoading')
       if (settings.errors) { EventBus.$emit('error', errorMessages) }
-      throw new Error(errorMessages)
+      throw errorMessages
     }
   }
 
@@ -201,7 +201,7 @@ export default class BaseService {
       let errorMessages = this.analyzeError(error)
       if (settings.load) store.dispatch('load/stopLoading')
       if (settings.errors) { EventBus.$emit('error', errorMessages) }
-      throw new Error(errorMessages)
+      throw errorMessages
     }
   }
 }
