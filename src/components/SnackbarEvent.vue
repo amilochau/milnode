@@ -1,6 +1,6 @@
 <template>
   <v-snackbar
-    :timeout="10000"
+    :timeout="timeout"
     :color="color"
     v-model="enabled"
     auto-height
@@ -47,7 +47,8 @@ export default {
       details: undefined,
       color: undefined,
       icon: undefined,
-      expanded: false
+      expanded: false,
+      timeout: 10000
     }
   },
   created () {
@@ -69,15 +70,18 @@ export default {
       if (errorMessages.message) {
         this.message = errorMessages.message
       } else {
-        this.message = errorMessages
+        this.message = errorMessages  // TODO v7.0 remove compatibility mode
         // eslint-disable-next-line
-        if (process.env.NODE_ENV !== 'production') { console.log(`Message must be set with the dedicated structure for snackbar: { message: XXX, details: XXX } (${errorMessages})`) }
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn(`Message must be set with the dedicated structure for snackbar: { message: XXX, details: XXX } (${errorMessages})`)
+        }
       }
       this.details = errorMessages.details
-      this.color = color
-      this.icon = icon
+      this.color = errorMessages.color || color
+      this.icon = errorMessages.icon || icon
       this.expanded = false
       this.enabled = true
+      this.timeout = errorMessages.timeout || 10000
     }
   }
 }
