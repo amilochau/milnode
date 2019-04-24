@@ -38,7 +38,6 @@ export default class BaseService {
         return { message: i18n.t('errors.notFound') }
       } else if (error.response.status === 400) {
         // Validation error
-        debugger
         let errorMessages = {}
         if (error.response.data && error.response.data.title) {
           errorMessages.message = error.response.data.title
