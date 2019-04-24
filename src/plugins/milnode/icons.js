@@ -1,6 +1,7 @@
 // See https://material.io/tools/icons
 const MILNODE_ICONS_MATERIAL = {
   'delete': 'delete',
+  'deleteMany': 'delete_sweep',
   'edit': 'edit',
   'add': 'add',
   'search': 'search',
@@ -42,6 +43,7 @@ const MILNODE_ICONS_MATERIAL = {
 // See https://materialdesignicons.com/
 const MILNODE_ICONS_MDI = {
   'delete': 'mdi-delete',
+  'deleteMany': 'mdi-delete-sweep',
   'edit': 'mdi-pencil',
   'add': 'mdi-plus',
   'search': 'mdi-magnify',
