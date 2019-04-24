@@ -38,6 +38,7 @@ export default class BaseService {
         return { message: i18n.t('errors.notFound') }
       } else if (error.response.status === 400) {
         // Validation error
+        debugger
         let errorMessages = {}
         if (error.response.data && error.response.data.title) {
           errorMessages.message = error.response.data.title
@@ -45,8 +46,14 @@ export default class BaseService {
         if (error.response.data && error.response.data.errors) {
           errorMessages.details = ''
           for (const key in error.response.data.errors) {
-            if (error.response.data.errors[key]) {
-              errorMessages.details += `${key} - ${error.response.data.errors[key]}\n`
+            for (const key2 in error.response.data.errors[key]) {
+              if (error.response.data.errors[key][key2]) {
+                if (key) {
+                  errorMessages.details += `${key} - ${error.response.data.errors[key][key2]}\n`
+                } else {
+                  errorMessages.details += `${error.response.data.errors[key][key2]}\n`
+                }
+              }
             }
           }
         }
