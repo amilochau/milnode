@@ -20,7 +20,7 @@ const MILNODE_ICONS_MATERIAL = {
   'logout': 'power_settings_new',
   'apps': 'apps',
   'gavel': 'gavel',
-  'cookie': 'mdi-gavel',
+  'cookie': 'gavel',
   'settings': 'settings',
   'info': 'info',
   'expand_less': 'expand_less',
