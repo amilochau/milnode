@@ -1,15 +1,28 @@
 <template>
   <v-dialog
     v-model="dialog"
+    :fullscreen="fullscreen"
     :max-width="maxWidth"
     :persistent="persistent"
     scrollable
     @keydown.esc="dialog = false">
     <v-form
       style="width:100%"
-      @submit.prevent="save"> 
+      @submit.prevent="save">
       <v-card>
-        <v-card-title class="headline">{{ title }}</v-card-title>
+        <v-toolbar
+          v-if="fullscreen"
+          color="primary"
+          dense>
+          <v-btn icon @click="dialog = false">
+            <v-icon>{{ $icons.close }}</v-icon>
+          </v-btn>
+          <v-toolbar-title>{{ title }}</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-card-title
+          v-else
+          class="headline">{{ title }}</v-card-title>
         <v-card-actions v-if="$slots['header-actions']">
           <slot name="header-actions"/>
         </v-card-actions>
@@ -81,7 +94,8 @@ export default {
   },
   data () {
     return {
-      dialog: false
+      dialog: false,
+      fullscreen: undefined
     }
   },
   computed: {
@@ -105,6 +119,14 @@ export default {
     },
     save () {
       this.$emit('save')
+    }
+  },
+  mounted () {
+    this.resize()
+  },
+  methods: {
+    resize () {
+      this.fullscreen = window.innerWidth < 768
     }
   }
 }
