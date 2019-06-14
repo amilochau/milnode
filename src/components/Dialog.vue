@@ -107,6 +107,9 @@ export default {
       return this.saveTitle ? this.saveTitle : this.$t('dialogs.save')
     }
   },
+  mounted () {
+    this.resize()
+  },
   watch: {
     toggle () {
       this.dialog = !this.dialog
@@ -119,12 +122,7 @@ export default {
     },
     save () {
       this.$emit('save')
-    }
-  },
-  mounted () {
-    this.resize()
-  },
-  methods: {
+    },
     resize () {
       this.fullscreen = window.innerWidth < 768
     }
