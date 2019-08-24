@@ -128,6 +128,7 @@ The following settings are available.
 | `store.modules` | `[]` | Vuex modules to add; these will be added to template modules |
 | **`i18n`** | `{}` | **Internationalization information** |
 | `i18n.messages` | `{}` | Vue-i18n messages to add; these will be added to template messages |
+| `i18n.useDefaultBrowser` | `false` | Use default browser to determine default culture |
 | **`authentication`** | `{}` | **Users authentication information** |
 | `authentication.disabled` | `false` | Disable user authentication |
 | `authentication.userManagerSettings` | `{}` | Oidc-client user manager settings |
@@ -162,7 +163,8 @@ Vue.use(MilNode, {
     modules: []
   },
   i18n: {
-    messages: {}
+    messages: {},
+    useDefaultBrowser: false
   },
   authentication: {
     disabled: false,
