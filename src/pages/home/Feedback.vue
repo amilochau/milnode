@@ -9,8 +9,8 @@
           :description="$t('pages.home.feedback.explain')"/>
       </v-flex>
       <v-flex
-        xs12 
-        sm8 offset-sm2 
+        xs12
+        sm8 offset-sm2
         md6 offset-md3>
         <v-card>
           <v-form @submit.prevent="sendFeedback">
@@ -35,9 +35,9 @@
           </v-form>
         </v-card>
       </v-flex>
-      <v-flex 
-        xs12 
-        sm8 offset-sm2 
+      <v-flex
+        xs12
+        sm8 offset-sm2
         md6 offset-md3
         class="text-xs-center">
         <em>{{ $t('pages.home.feedback.privacy') }}</em>

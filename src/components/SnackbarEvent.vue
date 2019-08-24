@@ -70,7 +70,7 @@ export default {
       if (errorMessages.message) {
         this.message = errorMessages.message
       } else {
-        this.message = errorMessages  // TODO v7.0 remove compatibility mode
+        this.message = errorMessages // TODO v7.0 remove compatibility mode
         // eslint-disable-next-line
         if (process.env.NODE_ENV !== 'production') {
           console.warn(`Message must be set with the dedicated structure for snackbar: { message: XXX, details: XXX } (${errorMessages})`)
