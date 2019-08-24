@@ -12,15 +12,28 @@ const I18nCore = {
   install (Vue, options = {}) {
     Vue.use(VueI18n)
 
-    moment.locale('en')
-    numeral.locale('en')
-
     // options.i18n
     let i18nSettings = options.i18n || {}
 
+    let defaultLanguage = 'en'
+    // Determine default language from browser culture
+    if (i18nSettings.useDefaultBrowser) {
+      var userLang = navigator.language || navigator.userLanguage
+      if (userLang) {
+        var userLanguage = userLang.split('-')[0]
+        if (!userLanguage.localeCompare('fr', undefined, { sensitivity: 'base' })) {
+          defaultLanguage = 'fr'
+        }
+        // Else keep English as default language
+      }
+    }
+
+    moment.locale(defaultLanguage)
+    numeral.locale(defaultLanguage)
+
     i18n = new VueI18n({
-      locale: 'en',
-      fallbackLocale: 'en',
+      locale: defaultLanguage,
+      fallbackLocale: defaultLanguage,
       messages: mixin({ en, fr }, i18nSettings.messages || {})
     })
   }
